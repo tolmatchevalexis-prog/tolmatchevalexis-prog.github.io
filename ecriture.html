@@ -22,7 +22,8 @@
 
     nav,
     h1,
-    h2 {
+    h2,
+    .pdf-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -48,9 +49,42 @@
       margin: 0 0 24px 0;
     }
 
+    h2 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 40px 0 18px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     p {
       margin: 0 0 16px 0;
       max-width: 720px;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 0 40px 0;
+    }
+
+    .text-block {
+      padding-top: 12px;
+      border-top: 1px solid #d9d9d9;
+      margin-top: 36px;
+    }
+
+    .pdf-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+    }
+
+    .pdf-link:hover {
+      text-decoration: underline;
     }
 
     a {
@@ -70,17 +104,43 @@
 
     <h1>Écriture</h1>
 
-    <p>
-      Page en construction.
+    <p class="intro">
+      Textes d’atelier, fragments, récits, archives et formes de veille.
     </p>
 
-    <p>
-      Cette section accueillera les textes d’atelier, les fragments, les récits et les publications.
-    </p>
+    <div class="text-block">
+      <h2>Les contes de la chasse après la pluie</h2>
 
-    <p>
-      <a href="index.html">← Retour à l’accueil</a>
-    </p>
+      <p>
+        Recueil de trente-six contes, <em>Les contes de la chasse après la pluie</em> déploie un ensemble de récits fictifs qui nourrissent le réel et accompagnent la connaissance de soi dans une dimension toujours plus large que l’expérience individuelle.
+      </p>
+
+      <p>
+        Nés d’une épreuve et d’un ébranlement profond, ces textes transmettent une expérience traversée de symboles, de seuils, d’épreuves et de rituels. D’abord imaginés pour de grands enfants, ils s’adressent en réalité à tou·tes. Leur caractère immémorial les inscrit dans une vaste famille de mythes et de contes, en résonance avec des pensées philosophiques aussi bien qu’avec des gestes politiques.
+      </p>
+
+      <p>
+        Altérité, gratitude, chute, échecs répétés, solitude, appartenance et soin collectif traversent ce livre. Le « moi-je chancelant » qui s’y avance laisse peu à peu place à d’autres voix, comme pour ébranler la certitude de notre unicité et déplacer la place aujourd’hui accordée à l’ego.
+      </p>
+
+      <p>
+        Écrits par un travailleur du métal, ces contes portent la marque d’un rapport concret aux matières transitoires et incertaines. Ils s’élaborent au contact d’un alliage de références littéraires et philosophiques, parmi lesquelles Henry David Thoreau, Carl Gustav Jung, Alain Badiou ou Anne Dufourmantelle.
+      </p>
+
+      <p>
+        Ces récits sont avant tout une invitation à l’expérience de la réciprocité. Ils appellent une lecture qui puisse aussi se faire collective, à voix haute, comme une traversée partagée.
+      </p>
+
+      <p>
+        <em>Avant-propos adapté d’un texte d’Adélaïde Blanc.</em>
+      </p>
+
+      <p>
+        <a class="pdf-link" href="contes-chasse-apres-la-pluie.pdf" target="_blank" rel="noopener noreferrer">
+          Ouvrir le recueil en PDF
+        </a>
+      </p>
+    </div>
   </div>
 </body>
 </html>
