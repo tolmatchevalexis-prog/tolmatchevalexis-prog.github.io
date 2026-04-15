@@ -14,13 +14,13 @@
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/arts-visuels.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/hero0.jpg" />
-  <meta property="og:image:alt" content="Composition abstraite de matières, mailles et formes sombres." />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/masque-01.jpg" />
+  <meta property="og:image:alt" content="Masque ornementé violet et rouge, vue frontale." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Arts visuels — Alexis Tolmatchev" />
   <meta name="twitter:description" content="Masques, parures, installations, dessins et projets. Une recherche entre présence, matière, seuil et imagination activée." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/hero0.jpg" />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/masque-01.jpg" />
 
   <style>
     body {
@@ -40,7 +40,9 @@
 
     nav,
     h1,
-    h2 {
+    h2,
+    .carousel-button,
+    .carousel-dot {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -98,8 +100,102 @@
       max-width: 720px;
     }
 
+    .carousel {
+      position: relative;
+      margin: 32px 0 12px 0;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .carousel-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 78vh;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(17, 17, 17, 0.15);
+      background: rgba(255, 255, 255, 0.75);
+      color: #111111;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .carousel-button:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: #cfcfcf;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: #111111;
+    }
+
     a {
       color: #111111;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 40px 18px 80px;
+      }
+
+      .carousel-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+
+      .carousel-slide img {
+        max-height: 68vh;
+      }
     }
   </style>
 </head>
@@ -129,6 +225,48 @@
       <p>
         Masques et parures ne relèvent ni du costume ni de l’ornement au sens décoratif, mais d’une recherche sur la présence. Le masque est un espace liminal ; la parure charge le corps, modifie sa gravité. Ensemble, ils ouvrent un autre régime d’apparition, entre tension et seuil.
       </p>
+
+      <div class="carousel" id="carousel-masques">
+        <button class="carousel-button prev" aria-label="Image précédente">‹</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="masque-01.jpg" alt="Masque ornementé violet et rouge, vue frontale." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-02.jpg" alt="Détail de tissage et de mailles sur une forme organique." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-03.jpg" alt="Détail floral bleuté sur voile et mailles." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-04.jpg" alt="Masque floral bleuté avec franges, vue frontale." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-05.jpg" alt="Masque géométrique iridescent, vue frontale." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-06.jpg" alt="Détail de masque en fourrure tachetée et structure noire." />
+            </div>
+            <div class="carousel-slide">
+              <img src="masque-07.jpg" alt="Détail de structure métallique, mailles et voile." />
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-button next" aria-label="Image suivante">›</button>
+
+        <div class="carousel-nav">
+          <button class="carousel-dot active" aria-label="Aller à l’image 1"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 2"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 3"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 4"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 5"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 6"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 7"></button>
+        </div>
+      </div>
     </section>
 
     <section id="installations">
@@ -164,5 +302,43 @@
       </p>
     </section>
   </div>
+
+  <script>
+    (function () {
+      const carousel = document.getElementById('carousel-masques');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prevButton = carousel.querySelector('.carousel-button.prev');
+      const nextButton = carousel.querySelector('.carousel-button.next');
+      const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      prevButton.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+      nextButton.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
