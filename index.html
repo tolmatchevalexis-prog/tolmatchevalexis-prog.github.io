@@ -14,13 +14,13 @@
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/index.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/hero0.jpg" />
-  <meta property="og:image:alt" content="Composition abstraite de matières, mailles et formes sombres." />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
+  <meta property="og:image:alt" content="Composition visuelle abstraite, sombre et texturée." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
   <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/hero0.jpg" />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
 
   <style>
     body {
@@ -40,7 +40,8 @@
 
     nav,
     h1,
-    h2 {
+    h2,
+    .section-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -74,42 +75,32 @@
       letter-spacing: 0.08em;
     }
 
-    h2 a {
-      color: #111111;
-      text-decoration: none;
-    }
-
-    h2 a:hover {
-      text-decoration: underline;
-    }
-
     .intro {
       font-size: 18px;
       max-width: 680px;
-      margin: 0 0 60px 0;
+      margin: 0 0 50px 0;
     }
 
-    .hero-image {
-      margin: 0 0 60px 0;
+    .home-image {
+      margin: 0 0 36px 0;
     }
 
-    .hero-image img {
+    .home-image img {
       display: block;
       width: 100%;
-      max-width: 100%;
       height: auto;
     }
 
-    section {
-      margin-bottom: 56px;
-      padding-top: 12px;
-      border-top: 1px solid #d9d9d9;
+    .panel {
+      background: #f3eee6;
+      padding: 28px 24px 24px 24px;
+      margin: 0 0 36px 0;
     }
 
     .section-subtitle {
       font-style: italic;
       font-size: 18px;
-      margin: 0 0 20px 0;
+      margin: 0 0 18px 0;
       max-width: 720px;
     }
 
@@ -118,8 +109,45 @@
       max-width: 720px;
     }
 
+    .section-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+
+    .section-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-block {
+      padding-top: 12px;
+      border-top: 1px solid #d9d9d9;
+      margin-top: 8px;
+    }
+
     a {
       color: #111111;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 40px 18px 80px;
+      }
+
+      .panel {
+        padding: 22px 18px 18px 18px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .intro,
+      .section-subtitle {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
@@ -138,13 +166,13 @@
       <p class="intro">
         Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil.
       </p>
-
-      <figure class="hero-image">
-        <img src="hero0.jpg" alt="Composition abstraite de matières, mailles et formes sombres." />
-      </figure>
     </header>
 
-    <section id="arts-visuels">
+    <figure class="home-image">
+      <img src="home-01.jpg" alt="Composition abstraite sombre, faite de matières, mailles et fragments." />
+    </figure>
+
+    <section id="arts-visuels" class="panel">
       <h2><a href="arts-visuels.html">Arts visuels</a></h2>
       <p class="section-subtitle">
         Sculptures, masques, parures et dispositifs de présence
@@ -161,9 +189,15 @@
       <p>
         L’ensemble compose une pratique où la forme cherche moins à démontrer qu’à produire une qualité de présence. Chaque œuvre tente d’ouvrir un lieu d’expérience, de mémoire et d’imagination activée, où le visible ne s’épuise pas dans ce qu’il montre immédiatement.
       </p>
+
+      <a class="section-link" href="arts-visuels.html">Voir</a>
     </section>
 
-    <section id="ecriture">
+    <figure class="home-image">
+      <img src="home-02.jpg" alt="Composition graphique colorée autour d’un visage stylisé." />
+    </figure>
+
+    <section id="ecriture" class="panel">
       <h2><a href="ecriture.html">Écriture</a></h2>
       <p class="section-subtitle">
         Contes, fragments, textes d’atelier et recherches mythopoétiques
@@ -180,9 +214,15 @@
       <p>
         Cette pratique cherche une langue capable de porter la simplicité sans perdre la profondeur. Une langue de veille, de mémoire et de réciprocité, où le texte ne ferme pas le sens mais active l’imagination, laisse place à l’expérience intérieure et ouvre, lui aussi, un seuil.
       </p>
+
+      <a class="section-link" href="ecriture.html">Voir</a>
     </section>
 
-    <section id="contact">
+    <figure class="home-image">
+      <img src="home-03.jpg" alt="Composition abstraite grise et ocre traversée de lignes et de signes." />
+    </figure>
+
+    <section id="contact" class="contact-block">
       <h2>Contact</h2>
       <p>
         Email : <a href="mailto:tolmatchev.alexis@gmail.com">tolmatchev.alexis@gmail.com</a>
