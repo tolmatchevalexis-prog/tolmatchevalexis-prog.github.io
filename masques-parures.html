@@ -94,6 +94,7 @@
       padding-top: 14px;
       border-top: 1px solid #d9d9d9;
       margin-top: 10px;
+      margin-bottom: 54px;
     }
 
     .series-subtitle {
@@ -188,7 +189,7 @@
 
     .back-link {
       display: inline-block;
-      margin-top: 32px;
+      margin-top: 12px;
       font-size: 14px;
       letter-spacing: 0.03em;
       text-decoration: none;
@@ -303,12 +304,74 @@
       </div>
     </section>
 
+    <section class="series" id="collaborations">
+      <h2>Collaborations — pièces réalisées</h2>
+
+      <p>
+        Les images présentées ici montrent des pièces réalisées dans le cadre de collaborations. Elles documentent mon travail propre sur les formes, les matériaux, les assemblages et la fabrication. La conception d’ensemble, l’activation, la performance ou la mise en scène peuvent relever d’autres contributions, selon les projets.
+      </p>
+
+      <div class="carousel" id="carousel-collaborations">
+        <button class="carousel-button prev" aria-label="Image précédente">‹</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="collab-01.jpg" alt="Masque porté avec voile et kimono, vue frontale." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-02.jpg" alt="Masque porté en situation avec éventail, sous lumière rouge." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-03.jpg" alt="Pièce à voile et ornements, vue à plat." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-04.jpg" alt="Voile porté, vue de profil dans une lumière sombre." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-05.jpg" alt="Voile porté, vue frontale sur fond noir." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-06.jpg" alt="Vue d’ensemble d’une performance avec masque et structure lumineuse." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-07.jpg" alt="Petite sculpture noire sur socle." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-08.jpg" alt="Grande structure verticale métallique à anneaux et suspensions." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-09.jpg" alt="Petit volume sombre orné de lignes claires, sur socle." />
+            </div>
+            <div class="carousel-slide">
+              <img src="collab-10.jpg" alt="Grande forme ovale sur piédestal dans un espace blanc." />
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-button next" aria-label="Image suivante">›</button>
+
+        <div class="carousel-nav">
+          <button class="carousel-dot active" aria-label="Aller à l’image 1"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 2"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 3"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 4"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 5"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 6"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 7"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 8"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 9"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 10"></button>
+        </div>
+      </div>
+    </section>
+
     <a class="back-link" href="arts-visuels.html">← Retour à Arts visuels</a>
   </div>
 
   <script>
-    (function () {
-      const carousel = document.getElementById('carousel-masques');
+    function initCarousel(carouselId) {
+      const carousel = document.getElementById(carouselId);
       const track = carousel.querySelector('.carousel-track');
       const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
       const prevButton = carousel.querySelector('.carousel-button.prev');
@@ -319,7 +382,6 @@
 
       function updateCarousel() {
         track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-
         dots.forEach((dot, index) => {
           dot.classList.toggle('active', index === currentIndex);
         });
@@ -341,7 +403,10 @@
           updateCarousel();
         });
       });
-    })();
+    }
+
+    initCarousel('carousel-masques');
+    initCarousel('carousel-collaborations');
   </script>
 </body>
-  </html>
+</html>
