@@ -43,7 +43,9 @@
     h2,
     .back-link,
     .carousel-button,
-    .carousel-dot {
+    .carousel-dot,
+    .audio-link,
+    .pdf-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -181,6 +183,39 @@
 
     .carousel-dot.active {
       background: #111111;
+    }
+
+    .pdf-link,
+    .audio-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      color: #111111;
+      transition: color 0.2s ease;
+    }
+
+    .pdf-link:hover,
+    .audio-link:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    .audio-block {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid #d9d9d9;
+    }
+
+    .audio-player {
+      margin: 16px 0 8px 0;
+      max-width: 720px;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      max-width: 720px;
     }
 
     .back-link {
@@ -337,6 +372,28 @@
           <button class="carousel-dot" aria-label="Aller à l’image 13"></button>
         </div>
       </div>
+
+      <a class="pdf-link" href="s-c-circuitato.pdf" target="_blank" rel="noopener noreferrer">
+        Télécharger le dossier PDF
+      </a>
+
+      <div class="audio-block">
+        <h2>Son</h2>
+        <p class="section-subtitle">
+          Partition sonore
+        </p>
+
+        <div class="audio-player">
+          <audio controls preload="none">
+            <source src="VEGETALIS%20v2.mp3" type="audio/mpeg" />
+            Votre navigateur ne prend pas en charge la lecture audio.
+          </audio>
+        </div>
+
+        <a class="audio-link" href="VEGETALIS%20v2.mp3" target="_blank" rel="noopener noreferrer">
+          Écouter ou télécharger le fichier sonore
+        </a>
+      </div>
     </section>
 
     <a class="back-link" href="arts-visuels.html">← Retour à Arts visuels</a>
@@ -381,4 +438,4 @@
     initCarousel('carousel-circuitato');
   </script>
 </body>
-</html>
+                </html>
