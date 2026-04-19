@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Alexis Tolmatchev — Masques, parures, sculpture et écriture</title>
-  <meta name="description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil." />
+  <meta name="description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
   <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/index.html" />
 
   <meta property="og:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
-  <meta property="og:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil." />
+  <meta property="og:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/index.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
-  <meta property="og:image:alt" content="Image d’ouverture du site d’Alexis Tolmatchev." />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
+  <meta property="og:image:alt" content="Composition graphique abstraite autour d’un visage stylisé." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
-  <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
+  <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
 
   <style>
     body {
@@ -30,10 +30,6 @@
       color: #111111;
       font-family: Garamond, Georgia, serif;
       line-height: 1.7;
-    }
-
-    body.loading {
-      overflow: hidden;
     }
 
     .container {
@@ -94,7 +90,7 @@
 
     .intro {
       font-size: 18px;
-      max-width: 680px;
+      max-width: 620px;
       margin: 0 0 50px 0;
     }
 
@@ -141,12 +137,6 @@
       text-decoration: underline;
     }
 
-    .contact-block {
-      padding-top: 12px;
-      border-top: 1px solid #d9d9d9;
-      margin-top: 0;
-    }
-
     a {
       color: #111111;
       transition: color 0.2s ease;
@@ -154,34 +144,6 @@
 
     a:hover {
       color: #ff6600;
-    }
-
-    /* Écran d’ouverture */
-    .opening-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(255, 255, 255, 0.98);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 1.2s ease, visibility 1.2s ease;
-    }
-
-    .opening-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .opening-image-box {
-      width: 600px;
-      height: 600px;
-      max-width: 88vw;
-      max-height: 88vw;
-      background: url("opening-01.jpg") center center / cover no-repeat;
     }
 
     @media (max-width: 700px) {
@@ -202,32 +164,23 @@
       .section-subtitle {
         font-size: 17px;
       }
-
-      .opening-image-box {
-        width: 88vw;
-        height: 88vw;
-      }
     }
   </style>
 </head>
-<body class="loading">
-  <div class="opening-screen" id="opening-screen" aria-hidden="true">
-    <div class="opening-image-box"></div>
-  </div>
-
+<body>
   <div class="container">
     <nav>
       <a href="index.html">Accueil</a>
-      <a href="presentation.html">Bio</a>
+      <a href="presentation.html">Présentation</a>
       <a href="arts-visuels.html">Arts visuels</a>
       <a href="ecriture.html">Écriture</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <header>
       <h1>Alexis Tolmatchev</h1>
       <p class="intro">
-        Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil.
+        Sculptures, masques, parures, textes et dispositifs de présence.
       </p>
     </header>
 
@@ -280,27 +233,6 @@
 
       <a class="section-link" href="ecriture.html">Lire</a>
     </section>
-
-    <section id="contact" class="contact-block">
-      <h2>Contact</h2>
-      <p>
-        Email : <a href="mailto:tolmatchev.alexis@gmail.com">tolmatchev.alexis@gmail.com</a>
-      </p>
-      <p>
-        Instagram : <a href="https://instagram.com/alexistolmatchev" target="_blank" rel="noopener noreferrer">@alexistolmatchev</a>
-      </p>
-    </section>
   </div>
-
-  <script>
-    window.addEventListener("load", function () {
-      const openingScreen = document.getElementById("opening-screen");
-
-      setTimeout(function () {
-        openingScreen.classList.add("hidden");
-        document.body.classList.remove("loading");
-      }, 5000);
-    });
-  </script>
 </body>
 </html>
