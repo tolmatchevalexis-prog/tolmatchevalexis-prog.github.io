@@ -161,7 +161,10 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: #000000 url("opening-01.jpg") center center / cover no-repeat;
+      background: rgba(255, 255, 255, 0.98);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       opacity: 1;
       visibility: visible;
       transition: opacity 1.2s ease, visibility 1.2s ease;
@@ -171,6 +174,14 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+    }
+
+    .opening-image-box {
+      width: 600px;
+      height: 600px;
+      max-width: 88vw;
+      max-height: 88vw;
+      background: url("opening-01.jpg") center center / cover no-repeat;
     }
 
     @media (max-width: 700px) {
@@ -192,15 +203,17 @@
         font-size: 17px;
       }
 
-      .opening-screen {
-        background-size: cover;
-        background-position: center center;
+      .opening-image-box {
+        width: 88vw;
+        height: 88vw;
       }
     }
   </style>
 </head>
 <body class="loading">
-  <div class="opening-screen" id="opening-screen" aria-hidden="true"></div>
+  <div class="opening-screen" id="opening-screen" aria-hidden="true">
+    <div class="opening-image-box"></div>
+  </div>
 
   <div class="container">
     <nav>
