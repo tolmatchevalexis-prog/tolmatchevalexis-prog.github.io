@@ -14,13 +14,13 @@
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/index.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
-  <meta property="og:image:alt" content="Composition graphique abstraite autour d’un visage stylisé." />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
+  <meta property="og:image:alt" content="Image d’ouverture du site d’Alexis Tolmatchev." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
   <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs pour activer l’imagination et habiter le seuil." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
 
   <style>
     body {
@@ -30,6 +30,10 @@
       color: #111111;
       font-family: Garamond, Georgia, serif;
       line-height: 1.7;
+    }
+
+    body.loading {
+      overflow: hidden;
     }
 
     .container {
@@ -152,6 +156,23 @@
       color: #ff6600;
     }
 
+    /* Écran d’ouverture */
+    .opening-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #000000 url("opening-01.jpg") center center / cover no-repeat;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1.2s ease, visibility 1.2s ease;
+    }
+
+    .opening-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
     @media (max-width: 700px) {
       .container {
         padding: 40px 18px 80px;
@@ -170,10 +191,17 @@
       .section-subtitle {
         font-size: 17px;
       }
+
+      .opening-screen {
+        background-size: cover;
+        background-position: center center;
+      }
     }
   </style>
 </head>
-<body>
+<body class="loading">
+  <div class="opening-screen" id="opening-screen" aria-hidden="true"></div>
+
   <div class="container">
     <nav>
       <a href="index.html">Accueil</a>
@@ -250,5 +278,16 @@
       </p>
     </section>
   </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      const openingScreen = document.getElementById("opening-screen");
+
+      setTimeout(function () {
+        openingScreen.classList.add("hidden");
+        document.body.classList.remove("loading");
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
