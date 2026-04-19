@@ -14,10 +14,13 @@
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/contact.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
+  <meta property="og:image:alt" content="Image d’ouverture d’Alexis Tolmatchev." />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact — Alexis Tolmatchev" />
   <meta name="twitter:description" content="Contacter Alexis Tolmatchev : email, Instagram et accès direct aux échanges professionnels." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/opening-01.jpg" />
 
   <style>
     body {
@@ -57,6 +60,21 @@
     nav a:hover {
       color: #ff6600;
       text-decoration: underline;
+    }
+
+    .contact-image {
+      margin: 0 0 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-image img {
+      display: block;
+      width: 800px;
+      height: 800px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
     }
 
     h1 {
@@ -103,6 +121,11 @@
         padding: 40px 18px 80px;
       }
 
+      .contact-image img {
+        width: 88vw;
+        height: 88vw;
+      }
+
       .contact-panel {
         padding: 22px 18px 18px 18px;
       }
@@ -126,6 +149,10 @@
       <a href="ecriture.html">Écriture</a>
       <a href="contact.html">Contact</a>
     </nav>
+
+    <figure class="contact-image">
+      <img src="opening-01.jpg" alt="Image de contact d’Alexis Tolmatchev." />
+    </figure>
 
     <header>
       <h1>Contact</h1>
