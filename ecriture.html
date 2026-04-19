@@ -3,7 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Écriture — Alexis Tolmatchev</title>
+  <meta name="description" content="Textes d’atelier, contes, fragments et romans en cours d’Alexis Tolmatchev." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/ecriture.html" />
+
+  <meta property="og:title" content="Écriture — Alexis Tolmatchev" />
+  <meta property="og:description" content="Textes d’atelier, contes, fragments et romans en cours d’Alexis Tolmatchev." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/ecriture.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/home-02.jpg" />
+  <meta property="og:image:alt" content="Image de la section écriture." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Écriture — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Textes d’atelier, contes, fragments et romans en cours d’Alexis Tolmatchev." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-02.jpg" />
+
   <style>
     body {
       margin: 0;
@@ -37,9 +55,11 @@
       color: #111111;
       text-decoration: none;
       margin-right: 18px;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
+      color: #ff6600;
       text-decoration: underline;
     }
 
@@ -52,9 +72,28 @@
     h2 {
       font-size: 14px;
       font-weight: bold;
-      margin: 40px 0 18px 0;
+      margin: 0 0 12px 0;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 680px;
+      margin: 0 0 40px 0;
+    }
+
+    .text-block {
+      padding-top: 14px;
+      border-top: 1px solid #d9d9d9;
+      margin-top: 36px;
+    }
+
+    .section-subtitle {
+      font-style: italic;
+      font-size: 18px;
+      margin: 0 0 18px 0;
+      max-width: 720px;
     }
 
     p {
@@ -62,33 +101,43 @@
       max-width: 720px;
     }
 
-    .intro {
-      font-size: 18px;
-      max-width: 620px;
-      margin: 0 0 40px 0;
-    }
-
-    .text-block {
-      padding-top: 12px;
-      border-top: 1px solid #d9d9d9;
-      margin-top: 36px;
-    }
-
     .pdf-link {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.03em;
       text-decoration: none;
+      color: #111111;
+      transition: color 0.2s ease;
     }
 
     .pdf-link:hover {
+      color: #ff6600;
       text-decoration: underline;
     }
 
     a {
       color: #111111;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 40px 18px 80px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .intro,
+      .section-subtitle {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
@@ -99,20 +148,24 @@
       <a href="presentation.html">Présentation</a>
       <a href="arts-visuels.html">Arts visuels</a>
       <a href="ecriture.html">Écriture</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
-    <h1>Écriture</h1>
+    <header>
+      <h1>Écriture</h1>
+      <p class="intro">
+        Textes d’atelier, fragments, récits, romans en cours et recherches mythopoétiques.
+      </p>
+    </header>
 
-    <p class="intro">
-      Textes d’atelier, fragments, récits, archives et formes de veille.
-    </p>
-
-    <div class="text-block">
+    <section class="text-block">
       <h2>Les contes de la chasse après la pluie</h2>
+      <p class="section-subtitle">
+        Recueil de trente-six contes
+      </p>
 
       <p>
-        Recueil de trente-six contes, <em>Les contes de la chasse après la pluie</em> déploie un ensemble de récits fictifs qui nourrissent le réel et accompagnent la connaissance de soi dans une dimension toujours plus large que l’expérience individuelle.
+        <em>Les contes de la chasse après la pluie</em> déploient un ensemble de récits fictifs qui nourrissent le réel et accompagnent la connaissance de soi dans une dimension toujours plus large que l’expérience individuelle.
       </p>
 
       <p>
@@ -124,7 +177,7 @@
       </p>
 
       <p>
-        Écrits par un travailleur du métal, ces contes portent la marque d’un rapport concret aux matières transitoires et incertaines. Ils s’élaborent au contact d’un alliage de références littéraires et philosophiques, parmi lesquelles Hermann Hesse, Carl Gustav Jung, Vladimir Jankélévitch ou Anne Dufourmantelle.
+        Écrits par un travailleur du métal, ces contes portent la marque d’un rapport concret aux matières transitoires et incertaines. Ils s’élaborent au contact d’un alliage de références littéraires et philosophiques, parmi lesquelles Henry David Thoreau, Carl Gustav Jung, Alain Badiou ou Anne Dufourmantelle.
       </p>
 
       <p>
@@ -135,12 +188,37 @@
         <em>Avant-propos adapté d’un texte d’Adélaïde Blanc.</em>
       </p>
 
-      <p>
-        <a class="pdf-link" href="contes-chasse-apres-la-pluie.pdf" target="_blank" rel="noopener noreferrer">
-          Ouvrir le recueil en PDF
-        </a>
+      <a class="pdf-link" href="contes-chasse-apres-la-pluie.pdf" target="_blank" rel="noopener noreferrer">
+        Ouvrir le recueil en PDF
+      </a>
+    </section>
+
+    <section class="text-block">
+      <h2>Devenir FAUVES</h2>
+      <p class="section-subtitle">
+        Roman en cours
       </p>
-    </div>
+
+      <p>
+        <em>Devenir FAUVES</em> déploie une fiction contemporaine nourrie d’une énergie beatpunk, traversée par l’amour, le labeur, la marge, la violence et l’intensité des perceptions. Ancré dans une ville réelle, le texte fait du présent un lieu d’instabilité, de friction et de métamorphose.
+      </p>
+
+      <p>
+        Porté par une écriture en tension, le récit refuse autant le réalisme plat que la psychologie explicative. Il avance par éclats, surgissements, fulgurances, et cherche une langue capable de tenir ensemble la précision du détail, la brutalité du monde et l’ouverture de l’imaginaire.
+      </p>
+
+      <p>
+        Photographie, chantier, danse, communauté provisoire, menace diffuse, désir, vulnérabilité et tendre puissance traversent ce livre. Ce qui s’y joue relève moins d’une affirmation de soi que d’une mise à l’épreuve : comment aimer, percevoir, résister, ne pas céder à la prédation, et continuer malgré tout à chercher une forme de justesse.
+      </p>
+
+      <p>
+        À travers Yata et Ursula, le récit explore une dynamique faite de contrastes, de désaccords féconds et de fidélités sensibles. Il donne place à des figures qui tentent de vivre sans se soumettre aux récits dominants, et qui cherchent, dans l’excès comme dans l’attention, une manière plus vive et plus libre d’habiter le monde.
+      </p>
+
+      <p>
+        <em>Devenir FAUVES</em> est avant tout une tentative pour rendre au récit sa charge d’intensité : faire d’une histoire non pas un refuge, mais une traversée ; non pas un discours clos, mais une expérience ouverte, physique, ambiguë et vivante.
+      </p>
+    </section>
   </div>
 </body>
 </html>
