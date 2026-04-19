@@ -44,7 +44,8 @@
     .back-link,
     .carousel-button,
     .carousel-dot,
-    .sound-link {
+    .sound-link,
+    .pdf-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -58,9 +59,11 @@
       color: #111111;
       text-decoration: none;
       margin-right: 18px;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
+      color: #ff6600;
       text-decoration: underline;
     }
 
@@ -189,22 +192,27 @@
       background: #111111;
     }
 
-    .sound-block {
-      margin-top: 28px;
-      padding-top: 14px;
-      border-top: 1px solid #d9d9d9;
-    }
-
+    .pdf-link,
     .sound-link {
       display: inline-block;
       margin-top: 10px;
       font-size: 14px;
       letter-spacing: 0.03em;
       text-decoration: none;
+      color: #111111;
+      transition: color 0.2s ease;
     }
 
+    .pdf-link:hover,
     .sound-link:hover {
+      color: #ff6600;
       text-decoration: underline;
+    }
+
+    .sound-block {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid #d9d9d9;
     }
 
     .back-link {
@@ -213,14 +221,22 @@
       font-size: 14px;
       letter-spacing: 0.03em;
       text-decoration: none;
+      color: #111111;
+      transition: color 0.2s ease;
     }
 
     .back-link:hover {
+      color: #ff6600;
       text-decoration: underline;
     }
 
     a {
       color: #111111;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #ff6600;
     }
 
     @media (max-width: 700px) {
@@ -254,7 +270,7 @@
   <div class="container">
     <nav>
       <a href="index.html">Accueil</a>
-      <a href="presentation.html">Présentation</a>
+      <a href="presentation.html">Bio</a>
       <a href="arts-visuels.html">Arts visuels</a>
       <a href="ecriture.html">Écriture</a>
       <a href="index.html#contact">Contact</a>
@@ -347,11 +363,15 @@
         </div>
       </div>
 
+      <a class="pdf-link" href="douzefolio-1.pdf" target="_blank" rel="noopener noreferrer">
+        Télécharger le portfolio DOUZE (PDF)
+      </a>
+
       <div class="sound-block">
         <h2>Sons — Eliot Hantute [ZEDEN]</h2>
-<p>
-  La série <em>RUST TO RUST</em> est accompagnée par un ensemble de pièces sonores composées par Eliot Hantute [ZEDEN]. Le son n’y intervient pas comme fond ou commentaire, mais comme une matière parallèle. Il prolonge les formes, en déplace les seuils et ouvre une autre qualité de présence. Là où le masque retire au visage son statut immédiat de preuve, le son travaille la durée, l’atmosphère, la résonance et l’après. Il ne décrit pas ; il active.
-</p>
+        <p>
+          La série <em>RUST TO RUST</em> est accompagnée par un ensemble de pièces sonores composées par Eliot Hantute [ZEDEN]. Le son n’y intervient pas comme fond ou commentaire, mais comme une matière parallèle. Il prolonge les formes, en déplace les seuils et ouvre une autre qualité de présence. Là où le masque retire au visage son statut immédiat de preuve, le son travaille la durée, l’atmosphère, la résonance et l’après. Il ne décrit pas ; il active.
+        </p>
 
         <a class="sound-link" href="https://on.soundcloud.com/lyXZGqAke5UzMtZ0SQ" target="_blank" rel="noopener noreferrer">
           Écouter sur SoundCloud
