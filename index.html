@@ -22,20 +22,23 @@
   <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
   <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
       padding: 0;
       background: #ffffff;
       color: #111111;
-      font-family: Garamond, Georgia, serif;
       line-height: 1.7;
     }
 
     .container {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 60px 28px 100px;
+      padding: 72px 30px 120px;
     }
 
     nav,
@@ -45,10 +48,18 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    p,
+    .intro,
+    .section-subtitle {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
     nav {
-      margin-bottom: 60px;
-      font-size: 14px;
-      letter-spacing: 0.03em;
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
     }
 
     nav a {
@@ -64,34 +75,24 @@
     }
 
     h1 {
-      font-size: 40px;
-      font-weight: normal;
-      margin: 0 0 14px 0;
-    }
-
-    h2 {
-      font-size: 14px;
-      font-weight: bold;
-      margin: 0 0 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    h2 a {
-      color: #111111;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    h2 a:hover {
-      color: #ff6600;
-      text-decoration: underline;
+      font-size: 54px;
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px 0;
     }
 
     .intro {
-      font-size: 18px;
-      max-width: 620px;
-      margin: 0 0 50px 0;
+      font-size: 20px;
+      max-width: 470px;
+      margin: 0 0 34px 0;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
     }
 
     .home-image {
@@ -105,36 +106,58 @@
     }
 
     .panel {
-      background: #dbe6e6;
-      padding: 28px 24px 24px 24px;
-      margin: 0 0 36px 0;
+      background: #eef3f3;
+      padding: 40px 34px 34px 34px;
+      margin: 0 0 64px 0;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    h2 a {
+      color: #111111;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    h2 a:hover {
+      color: #ff6600;
+      text-decoration: underline;
     }
 
     .section-subtitle {
-      font-style: italic;
-      font-size: 18px;
-      margin: 0 0 18px 0;
-      max-width: 720px;
+      font-size: 20px;
+      margin: 0 0 22px 0;
+      max-width: 560px;
     }
 
     p {
-      margin: 0 0 14px 0;
-      max-width: 720px;
+      font-size: 18px;
+      margin: 0 0 16px 0;
+      max-width: 660px;
     }
 
     .section-link {
       display: inline-block;
-      margin-top: 6px;
-      font-size: 14px;
-      letter-spacing: 0.03em;
+      margin-top: 14px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-decoration: none;
       color: #111111;
-      transition: color 0.2s ease;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
     .section-link:hover {
       color: #ff6600;
-      text-decoration: underline;
+      border-bottom-color: #ff6600;
     }
 
     a {
@@ -148,20 +171,40 @@
 
     @media (max-width: 700px) {
       .container {
-        padding: 40px 18px 80px;
+        padding: 44px 18px 88px;
       }
 
-      .panel {
-        padding: 22px 18px 18px 18px;
-        margin: 0 0 28px 0;
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
       }
 
       h1 {
-        font-size: 34px;
+        font-size: 38px;
+        margin-bottom: 16px;
       }
 
-      .intro,
+      .intro {
+        font-size: 18px;
+        max-width: 100%;
+        margin-bottom: 28px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .panel {
+        padding: 24px 18px 20px 18px;
+        margin: 0 0 40px 0;
+      }
+
       .section-subtitle {
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+
+      p {
         font-size: 17px;
       }
     }
@@ -182,6 +225,7 @@
       <p class="intro">
         Sculptures, masques, parures, textes et dispositifs de présence.
       </p>
+      <div class="header-rule"></div>
     </header>
 
     <figure class="home-image">
@@ -195,15 +239,7 @@
       </p>
 
       <p>
-        Le travail d’Alexis Tolmatchev se déploie à travers des sculptures, des masques, des parures, des objets et des installations conçus comme des formes à activer. Chaque pièce naît d’un dialogue étroit avec la matière : métal, textile, dentelle, corde, fibres, fragments, surfaces pauvres ou précieuses. Rien n’y est purement décoratif. La matière y agit comme mémoire, tension, dépôt, résistance et passage.
-      </p>
-
-      <p>
-        Le masque y occupe une place centrale. Il ne vient pas illustrer un personnage, mais suspendre la lisibilité immédiate du visage, déplacer le regard, ouvrir un autre régime de présence. Les parures prolongent ce déplacement : elles chargent le corps, orientent sa tenue, modifient sa gravité, et transforment la silhouette en seuil. Les sculptures et installations poursuivent cette recherche dans l’espace, entre apparition, condensation et silence.
-      </p>
-
-      <p>
-        L’ensemble compose une pratique où la forme cherche moins à démontrer qu’à produire une qualité de présence. Chaque œuvre tente d’ouvrir un lieu d’expérience, de mémoire et d’imagination activée, où le visible ne s’épuise pas dans ce qu’il montre immédiatement.
+        Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des seuils à activer. Masques, parures, objets et installations déplacent le regard, chargent la matière et ouvrent un autre régime de présence.
       </p>
 
       <a class="section-link" href="arts-visuels.html">Voir les pièces</a>
@@ -216,19 +252,11 @@
     <section id="ecriture" class="panel">
       <h2><a href="ecriture.html">Écriture</a></h2>
       <p class="section-subtitle">
-        Contes, fragments, textes d’atelier et recherches mythopoétiques
+        Contes, fragments, textes d’atelier et romans en cours
       </p>
 
       <p>
-        L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle n’intervient pas après coup pour expliquer les œuvres, mais chemine avec elles, au plus près de leur élaboration. Elle prend la forme de contes, de fragments, de notes, de textes d’atelier, de récits brefs ou plus amples, où se croisent mémoire, seuil, altérité, solitude, appartenance et expérience du passage.
-      </p>
-
-      <p>
-        Avec <em>Les contes de la chasse après la pluie</em>, Alexis Tolmatchev déploie un ensemble de récits où la fiction n’est jamais coupée du réel. Le conte y devient un instrument de traversée, une manière d’approcher ce qui agit dans l’ombre, ce qui résiste encore au langage direct, ce qui ne peut être saisi qu’à travers des figures, des symboles et des déplacements de voix. L’écriture y travaille comme la matière : par dépôts, par échos, par survivances.
-      </p>
-
-      <p>
-        Cette pratique cherche une langue capable de porter la simplicité sans perdre la profondeur. Une langue de veille, de mémoire et de réciprocité, où le texte ne ferme pas le sens mais active l’imagination, laisse place à l’expérience intérieure et ouvre, lui aussi, un seuil.
+        L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle rassemble contes, récits, journal d’atelier et recherches en cours, dans une langue de veille, de mémoire et de traversée.
       </p>
 
       <a class="section-link" href="ecriture.html">Lire</a>
