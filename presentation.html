@@ -22,32 +22,42 @@
   <meta name="twitter:description" content="Présentation du travail d’Alexis Tolmatchev : sculpture, parure, écriture, dispositif, imagination activée." />
   <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/presentation-01.jpg" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
       padding: 0;
       background: #ffffff;
       color: #111111;
-      font-family: Garamond, Georgia, serif;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 60px 28px 100px;
+      padding: 72px 30px 120px;
     }
 
     nav,
     h1,
-    h2 {
+    h2,
+    .document-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    p {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
     nav {
-      margin-bottom: 60px;
-      font-size: 14px;
-      letter-spacing: 0.03em;
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
     }
 
     nav a {
@@ -63,21 +73,30 @@
     }
 
     h1 {
-      font-size: 40px;
-      font-weight: normal;
-      margin: 0 0 40px 0;
+      font-size: 54px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 28px 0;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
     }
 
     h2 {
-      font-size: 14px;
-      font-weight: bold;
-      margin: 0 0 24px 0;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 18px 0;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
     }
 
     .section-image {
-      margin: 0 0 28px 0;
+      margin: 0 0 34px 0;
     }
 
     .section-image img {
@@ -87,12 +106,32 @@
     }
 
     .text-block {
-      margin: 0 0 56px 0;
+      margin: 0 0 72px 0;
     }
 
     p {
-      margin: 0 0 18px 0;
-      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+    }
+
+    .document-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .document-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
     }
 
     a {
@@ -106,12 +145,34 @@
 
     @media (max-width: 700px) {
       .container {
-        padding: 40px 18px 80px;
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
       }
 
       h1 {
-        font-size: 34px;
-        margin-bottom: 32px;
+        font-size: 42px;
+        margin-bottom: 20px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .section-image {
+        margin-bottom: 24px;
+      }
+
+      .text-block {
+        margin-bottom: 48px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.45;
       }
     }
   </style>
@@ -120,14 +181,15 @@
   <div class="container">
     <nav>
       <a href="index.html">Accueil</a>
-      <a href="presentation.html">Bio</a>
+      <a href="presentation.html">Présentation</a>
       <a href="arts-visuels.html">Arts visuels</a>
       <a href="ecriture.html">Écriture</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <header>
       <h1>Présentation</h1>
+      <div class="header-rule"></div>
     </header>
 
     <figure class="section-image">
@@ -182,13 +244,15 @@
       <p>
         Cette recherche avance ainsi vers des formes qui ne cherchent pas à tout dire. Des formes qui préfèrent tenir leur part d’ombre, d’ambivalence et de silence. Des formes capables d’accueillir ce qui résiste encore au langage, sans pour autant renoncer à la rigueur. À travers ses séries, ses installations et ses textes, Alexis Tolmatchev développe une œuvre où sculpture, parure, écriture et activation se répondent, afin d’ouvrir un espace où la matière se charge, où l’imagination s’active, et où le regard peut, à son tour, franchir un seuil.
       </p>
-    </section><section class="text-block">
-  <h2>Document</h2>
+    </section>
 
-  <p>
-    <a href="bio-cv.pdf" target="_blank" rel="noopener noreferrer">Télécharger la bio et le CV (PDF)</a>
-  </p>
-</section>
+    <section class="text-block">
+      <h2>Document</h2>
+
+      <p>
+        <a class="document-link" href="bio-cv.pdf" target="_blank" rel="noopener noreferrer">Télécharger la bio et le CV (PDF)</a>
+      </p>
+    </section>
   </div>
 </body>
 </html>
