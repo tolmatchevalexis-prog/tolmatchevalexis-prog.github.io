@@ -1,1 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>DOUZE — RUST TO RUST — Alexis Tolmatchev</title>
+  <meta name="description" content="RUST TO RUST, premier volet de DOUZE : série de douze masques et parures conçus comme des dispositifs sculpturaux à activer." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/rust-to-rust.html" />
+
+  <meta property="og:title" content="DOUZE — RUST TO RUST — Alexis Tolmatchev" />
+  <meta property="og:description" content="Premier volet de DOUZE : série de douze masques et parures conçus comme des dispositifs sculpturaux à activer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/rust-to-rust.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/rusttorust-0.jpg" />
+  <meta property="og:image:alt" content="Première image de la série RUST TO RUST." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DOUZE — RUST TO RUST — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Premier volet de DOUZE : série de douze masques et parures conçus comme des dispositifs sculpturaux à activer." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/rusttorust-0.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 30px 120px;
+    }
+
+    nav,
+    h1,
+    h2,
+    .intro,
+    .pdf-link,
+    .audio-link,
+    .back-link,
+    .carousel-button,
+    .carousel-dot,
+    .track-title {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p,
+    .section-subtitle {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 54px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px 0;
+    }
+
+    .intro {
+      font-size: 15px;
+      line-height: 1.35;
+      margin: 0 0 34px 0;
+      max-width: 720px;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
+    }
+
+    .text-block {
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      margin: 0 0 72px 0;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      line-height: 1.35;
+      margin: 0 0 20px 0;
+      max-width: 560px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .carousel {
+      position: relative;
+      margin: 30px 0 20px 0;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .carousel-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 78vh;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(17, 17, 17, 0.15);
+      background: rgba(255, 255, 255, 0.78);
+      color: #111111;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .carousel-button:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: #cfcfcf;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: #111111;
+    }
+
+    .pdf-link,
+    .audio-link,
+    .back-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pdf-link:hover,
+    .audio-link:hover,
+    .back-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    .audio-block {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+    }
+
+    .track {
+      margin: 0 0 28px 0;
+      max-width: 720px;
+    }
+
+    .track-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+
+    .audio-player {
+      margin: 0 0 6px 0;
+      max-width: 720px;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    a {
+      color: #111111;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 42px;
+        margin-bottom: 16px;
+      }
+
+      .intro {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 28px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .text-block {
+        margin-bottom: 48px;
+      }
+
+      .section-subtitle {
+        font-size: 19px;
+        line-height: 1.3;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.45;
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      .carousel-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+
+      .carousel-slide img {
+        max-height: 68vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="arts-visuels.html">Arts visuels</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+      <h1>DOUZE — RUST TO RUST</h1>
+      <p class="intro">
+        Série de douze masques et parures.
+      </p>
+      <div class="header-rule"></div>
+    </header>
+
+    <section class="text-block">
+      <h2>RUST TO RUST</h2>
+      <p class="section-subtitle">
+        Premier volet de DOUZE
+      </p>
+
+      <p>
+        <em>RUST TO RUST</em> est le premier volet d’une série de douze masques et parures conçus comme des dispositifs sculpturaux à activer. L’origine de ce travail se trouve dans un texte du recueil <em>Les contes de la chasse après la pluie</em>. Le masque n’est pas une extension du moi ; il opère une déprise. Il retire au visage son statut de preuve ontologique et déplace l’apparition vers la matière : poids, contrainte, texture, durée. Ici, l’expression n’est pas « montrée », elle est traversée par le cycle d’Aiôn.
+      </p>
+
+      <div class="carousel" id="carousel-rust">
+        <button class="carousel-button prev" aria-label="Image précédente">←</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="rusttorust-0.jpg" alt="Image 1 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-01.jpg" alt="Image 2 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-02.jpg" alt="Image 3 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-03.jpg" alt="Image 4 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-04.jpg" alt="Image 5 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-05.jpg" alt="Image 6 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-06.jpg" alt="Image 7 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-07.jpg" alt="Image 8 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-08.jpg" alt="Image 9 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-09.jpg" alt="Image 10 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-10.jpg" alt="Image 11 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-11.jpg" alt="Image 12 de RUST TO RUST." /></div>
+            <div class="carousel-slide"><img src="rusttorust-12.jpg" alt="Image 13 de RUST TO RUST." /></div>
+          </div>
+        </div>
+
+        <button class="carousel-button next" aria-label="Image suivante">→</button>
+
+        <div class="carousel-nav">
+          <button class="carousel-dot active" aria-label="Aller à l’image 1"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 2"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 3"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 4"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 5"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 6"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 7"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 8"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 9"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 10"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 11"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 12"></button>
+          <button class="carousel-dot" aria-label="Aller à l’image 13"></button>
+        </div>
+      </div>
+
+      <a class="pdf-link" href="douzefolio-1.pdf" target="_blank" rel="noopener noreferrer">
+        Télécharger le portfolio DOUZE
+      </a>
+
+      <div class="audio-block">
+        <h2>Sons — Eliot Hantute [ZEDEN]</h2>
+        <p class="section-subtitle">
+          Quatre pièces pour RUST TO RUST
+        </p>
+
+        <p>
+          La série <em>RUST TO RUST</em> est accompagnée par un ensemble de pièces sonores composées par Eliot Hantute [ZEDEN]. Le son n’y intervient pas comme fond ou commentaire, mais comme une matière parallèle. Il prolonge les formes, en déplace les seuils et ouvre une autre qualité de présence. Là où le masque retire au visage son statut immédiat de preuve, le son travaille la durée, l’atmosphère, la résonance et l’après. Il ne décrit pas ; il active.
+        </p>
+
+        <div class="track">
+          <div class="track-title">Autumn — Restless</div>
+          <div class="audio-player">
+            <audio controls preload="none">
+              <source src="ZEDEN%20-%20Autumn%20_%20Restless%20(Final).mp3" type="audio/mpeg" />
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+          <a class="audio-link" href="ZEDEN%20-%20Autumn%20_%20Restless%20(Final).mp3" target="_blank" rel="noopener noreferrer">Écouter ou télécharger</a>
+        </div>
+
+        <div class="track">
+          <div class="track-title">Winter — Afterlife</div>
+          <div class="audio-player">
+            <audio controls preload="none">
+              <source src="ZEDEN%20-%20Winter%20_%20Afterlife%20(Final).mp3" type="audio/mpeg" />
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+          <a class="audio-link" href="ZEDEN%20-%20Winter%20_%20Afterlife%20(Final).mp3" target="_blank" rel="noopener noreferrer">Écouter ou télécharger</a>
+        </div>
+
+        <div class="track">
+          <div class="track-title">Spring — Rise And Fall</div>
+          <div class="audio-player">
+            <audio controls preload="none">
+              <source src="ZEDEN%20-%20Spring%20_%20Rise%20And%20Fall%20(Final).mp3" type="audio/mpeg" />
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+          <a class="audio-link" href="ZEDEN%20-%20Spring%20_%20Rise%20And%20Fall%20(Final).mp3" target="_blank" rel="noopener noreferrer">Écouter ou télécharger</a>
+        </div>
+
+        <div class="track">
+          <div class="track-title">Summer — Eternum</div>
+          <div class="audio-player">
+            <audio controls preload="none">
+              <source src="ZEDEN%20-%20Summer%20_%20Eternum%20(Final).mp3" type="audio/mpeg" />
+              Votre navigateur ne prend pas en charge la lecture audio.
+            </audio>
+          </div>
+          <a class="audio-link" href="ZEDEN%20-%20Summer%20_%20Eternum%20(Final).mp3" target="_blank" rel="noopener noreferrer">Écouter ou télécharger</a>
+        </div>
+      </div>
+    </section>
+
+    <a class="back-link" href="masques-parures.html">Retour à Masques et parures</a>
+  </div>
+
+  <script>
+    function initCarousel(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prevButton = carousel.querySelector('.carousel-button.prev');
+      const nextButton = carousel.querySelector('.carousel-button.next');
+      const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      prevButton.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+      nextButton.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+    }
+
+    initCarousel('carousel-rust');
+  </script>
+</body>
+  </html>
