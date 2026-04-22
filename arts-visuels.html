@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Arts visuels — Alexis Tolmatchev</title>
-  <meta name="description" content="Masques, parures, installations, dessins et projets. Une recherche entre présence, matière, seuil et imagination activée." />
+  <meta name="description" content="Masques, parures, installations, dessins, projets et vidéos. Une recherche entre présence, matière, seuil et imagination activée." />
   <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/arts-visuels.html" />
 
   <meta property="og:title" content="Arts visuels — Alexis Tolmatchev" />
-  <meta property="og:description" content="Masques, parures, installations, dessins et projets. Une recherche entre présence, matière, seuil et imagination activée." />
+  <meta property="og:description" content="Masques, parures, installations, dessins, projets et vidéos. Une recherche entre présence, matière, seuil et imagination activée." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/arts-visuels.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
@@ -19,7 +19,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Arts visuels — Alexis Tolmatchev" />
-  <meta name="twitter:description" content="Masques, parures, installations, dessins et projets. Une recherche entre présence, matière, seuil et imagination activée." />
+  <meta name="twitter:description" content="Masques, parures, installations, dessins, projets et vidéos. Une recherche entre présence, matière, seuil et imagination activée." />
   <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/artsvisuels-01.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +45,8 @@
     h1,
     h2,
     .section-link,
-    .intro {
+    .intro,
+    .panel-link-label {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -105,10 +106,22 @@
       height: auto;
     }
 
+    .panel-link {
+      display: block;
+      text-decoration: none;
+      color: #111111;
+    }
+
     .panel {
       background: #eef3f3;
       padding: 40px 34px 34px 34px;
       margin: 0 0 64px 0;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .panel-link:hover .panel {
+      background: #e7eeee;
+      transform: translateY(-1px);
     }
 
     h2 {
@@ -135,20 +148,19 @@
       hyphens: auto;
     }
 
-    .section-link {
+    .panel-link-label {
       display: inline-block;
       margin-top: 14px;
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
       color: #111111;
       border-bottom: 1px solid #111111;
       padding-bottom: 2px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .section-link:hover {
+    .panel-link:hover .panel-link-label {
       color: #ff6600;
       border-bottom-color: #ff6600;
     }
@@ -220,7 +232,7 @@
     <header>
       <h1>Arts visuels</h1>
       <p class="intro">
-        Masques, parures, installations, dessins et formes en projet.
+        Masques, parures, installations, dessins, formes en projet et vidéos.
       </p>
       <div class="header-rule"></div>
     </header>
@@ -229,69 +241,96 @@
       <img src="artsvisuels-01.jpg" alt="Image pour la section Masques et parures." />
     </figure>
 
-    <section id="masques-parures" class="panel">
-      <h2>Masques et parures</h2>
-      <p class="section-subtitle">
-        Formes portées, formes activées
-      </p>
+    <a class="panel-link" href="masques-parures.html">
+      <section id="masques-parures" class="panel">
+        <h2>Masques et parures</h2>
+        <p class="section-subtitle">
+          Formes portées, formes activées
+        </p>
 
-      <p>
-        Masques et parures ne relèvent ni du costume ni de l’ornement au sens décoratif, mais d’une recherche sur la présence. Le masque est un espace liminal ; la parure charge le corps, modifie sa gravité. Ensemble, ils ouvrent un autre régime d’apparition, entre tension et seuil.
-      </p>
+        <p>
+          Masques et parures ne relèvent ni du costume ni de l’ornement au sens décoratif, mais d’une recherche sur la présence. Le masque est un espace liminal ; la parure charge le corps, modifie sa gravité. Ensemble, ils ouvrent un autre régime d’apparition, entre tension et seuil.
+        </p>
 
-      <a class="section-link" href="masques-parures.html">Voir la sélection</a>
-    </section>
+        <span class="panel-link-label">Voir la sélection</span>
+      </section>
+    </a>
 
     <figure class="section-image">
       <img src="artsvisuels-02.jpg" alt="Image pour la section Installations." />
     </figure>
 
-    <section id="installations" class="panel">
-      <h2>Installations</h2>
-      <p class="section-subtitle">
-        Espace, circulation, condensation
-      </p>
+    <a class="panel-link" href="installations.html">
+      <section id="installations" class="panel">
+        <h2>Installations</h2>
+        <p class="section-subtitle">
+          Espace, circulation, condensation
+        </p>
 
-      <p>
-        Les installations prolongent cette recherche à l’échelle de l’espace. Elles articulent formes, matières, son et lumière dans des dispositifs où le sens ne se donne jamais d’un seul bloc. L’espace investi devient un lieu de circulation, de condensation et de transformation. Elles permettent d’élargir le travail du seuil : le déplacement et la durée deviennent eux aussi des matériaux.
-      </p>
+        <p>
+          Les installations prolongent cette recherche à l’échelle de l’espace. Elles articulent formes, matières, son et lumière dans des dispositifs où le sens ne se donne jamais d’un seul bloc. L’espace investi devient un lieu de circulation, de condensation et de transformation. Elles permettent d’élargir le travail du seuil : le déplacement et la durée deviennent eux aussi des matériaux.
+        </p>
 
-      <a class="section-link" href="installations.html">Voir les installations</a>
-    </section>
+        <span class="panel-link-label">Voir les installations</span>
+      </section>
+    </a>
 
     <figure class="section-image">
       <img src="artsvisuels-03.jpg" alt="Image pour la section Dessins." />
     </figure>
 
-    <section id="dessins" class="panel">
-      <h2>Dessins</h2>
-      <p class="section-subtitle">
-        Lignes de recherche, formes en veille
-      </p>
+    <a class="panel-link" href="dessins.html">
+      <section id="dessins" class="panel">
+        <h2>Dessins</h2>
+        <p class="section-subtitle">
+          Lignes de recherche, formes en veille
+        </p>
 
-      <p>
-        Le dessin accompagne le travail comme espace de recherche, de mise à l’épreuve et de surgissement. Il ne sert pas uniquement à préparer une pièce ; il constitue un lieu autonome où apparaissent des tensions de forme, des rythmes, des rapports de masses et des figures encore instables. Entre notation, esquisse et élaboration, les dessins gardent la trace d’un travail en train de se chercher, parfois en amont des œuvres, parfois à côté d’elles.
-      </p>
+        <p>
+          Le dessin accompagne le travail comme espace de recherche, de mise à l’épreuve et de surgissement. Il ne sert pas uniquement à préparer une pièce ; il constitue un lieu autonome où apparaissent des tensions de forme, des rythmes, des rapports de masses et des figures encore instables. Entre notation, esquisse et élaboration, les dessins gardent la trace d’un travail en train de se chercher, parfois en amont des œuvres, parfois à côté d’elles.
+        </p>
 
-      <a class="section-link" href="dessins.html">Voir les dessins</a>
-    </section>
+        <span class="panel-link-label">Voir les dessins</span>
+      </section>
+    </a>
 
     <figure class="section-image">
       <img src="artsvisuels-04.jpg" alt="Image pour la section Projets." />
     </figure>
 
-    <section id="projets" class="panel">
-      <h2>Projets</h2>
-      <p class="section-subtitle">
-        Ensembles, séries et recherches en cours
-      </p>
+    <a class="panel-link" href="projets.html">
+      <section id="projets" class="panel">
+        <h2>Projets</h2>
+        <p class="section-subtitle">
+          Ensembles, séries et recherches en cours
+        </p>
 
-      <p>
-        Cette section rassemble des projets plus larges, des ensembles en cours, des séries et des recherches qui déploient le travail dans le temps. On y trouve des formes déjà constituées, d’autres encore ouvertes, ainsi que des articulations entre sculpture, parure, installation, texte et image en mouvement.
-      </p>
+        <p>
+          Cette section rassemble des projets plus larges, des ensembles en cours, des séries et des recherches qui déploient le travail dans le temps. On y trouve des formes déjà constituées, d’autres encore ouvertes, ainsi que des articulations entre sculpture, parure, installation, texte et image en mouvement.
+        </p>
 
-      <a class="section-link" href="projets.html">Voir les projets</a>
-    </section>
+        <span class="panel-link-label">Voir les projets</span>
+      </section>
+    </a>
+
+    <figure class="section-image">
+      <img src="artsvisuels-05.jpg" alt="Image pour la section Vidéos." />
+    </figure>
+
+    <a class="panel-link" href="videos.html">
+      <section id="videos" class="panel">
+        <h2>Vidéos</h2>
+        <p class="section-subtitle">
+          Image en mouvement, formes traversées
+        </p>
+
+        <p>
+          La vidéo prolonge le travail par le temps, interroge le geste et la durée. Les vidéos apparaissent ici comme des expérimentations situées : des traversées, des mises en tension entre matière visuelle, espace, son et temps.
+        </p>
+
+        <span class="panel-link-label">Voir les vidéos</span>
+      </section>
+    </a>
   </div>
 </body>
 </html>
