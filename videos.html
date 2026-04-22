@@ -129,10 +129,12 @@
       max-width: 860px;
     }
 
-    .video-player video {
+    .video-player iframe {
       display: block;
       width: 100%;
+      aspect-ratio: 16 / 9;
       height: auto;
+      border: 0;
       background: #000000;
     }
 
@@ -234,14 +236,16 @@
       </p>
 
       <div class="video-player">
-        <video controls preload="metadata">
-          <source src="deeper-than-us.mp4" type="video/mp4" />
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/Z5TdmBDlJ7Y"
+          title="deeper than us"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <a class="video-link" href="deeper-than-us.mp4" target="_blank" rel="noopener noreferrer">
-        Ouvrir la vidéo
+      <a class="video-link" href="https://youtu.be/Z5TdmBDlJ7Y" target="_blank" rel="noopener noreferrer">
+        Ouvrir sur YouTube
       </a>
     </section>
 
@@ -252,14 +256,16 @@
       </p>
 
       <div class="video-player">
-        <video controls preload="metadata">
-          <source src="polymorph.mp4" type="video/mp4" />
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/Pw_iamqNzVU"
+          title="polymorph"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <a class="video-link" href="polymorph.mp4" target="_blank" rel="noopener noreferrer">
-        Ouvrir la vidéo
+      <a class="video-link" href="https://youtu.be/Pw_iamqNzVU" target="_blank" rel="noopener noreferrer">
+        Ouvrir sur YouTube
       </a>
     </section>
 
@@ -270,18 +276,20 @@
       </p>
 
       <div class="video-player">
-        <video controls preload="metadata">
-          <source src="Polytech.mp4" type="video/mp4" />
-          Votre navigateur ne prend pas en charge la lecture vidéo.
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/3BPfAcFdmSA"
+          title="Polytech"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <a class="video-link" href="Polytech.mp4" target="_blank" rel="noopener noreferrer">
-        Ouvrir la vidéo
+      <a class="video-link" href="https://youtu.be/3BPfAcFdmSA" target="_blank" rel="noopener noreferrer">
+        Ouvrir sur YouTube
       </a>
     </section>
 
     <a class="back-link" href="arts-visuels.html">Retour à Arts visuels</a>
   </div>
 </body>
-          </html>
+</html>
