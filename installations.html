@@ -5,22 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Installations — Alexis Tolmatchev</title>
-  <meta name="description" content="Installations d’Alexis Tolmatchev. Formes, matières, sons, images et circulations dans des dispositifs de présence." />
+  <meta name="description" content="Installations d’Alexis Tolmatchev. Dispositifs de présence, ensembles et archives." />
   <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/installations.html" />
 
   <meta property="og:title" content="Installations — Alexis Tolmatchev" />
-  <meta property="og:description" content="Installations d’Alexis Tolmatchev. Formes, matières, sons, images et circulations dans des dispositifs de présence." />
+  <meta property="og:description" content="Installations d’Alexis Tolmatchev. Dispositifs de présence, ensembles et archives." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/installations.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/circuitato-0.jpg" />
-  <meta property="og:image:alt" content="Première image de l’installation Silicone connections / CIRCUITATO." />
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Installations — Alexis Tolmatchev" />
-  <meta name="twitter:description" content="Installations d’Alexis Tolmatchev. Formes, matières, sons, images et circulations dans des dispositifs de présence." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/circuitato-0.jpg" />
+  <meta name="twitter:description" content="Installations d’Alexis Tolmatchev. Dispositifs de présence, ensembles et archives." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,11 +42,7 @@
     h1,
     h2,
     .intro,
-    .pdf-link,
-    .audio-link,
-    .back-link,
-    .carousel-button,
-    .carousel-dot {
+    .block-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -103,7 +96,37 @@
     .text-block {
       padding-top: 18px;
       border-top: 1px solid #d4dddd;
-      margin: 0 0 72px 0;
+      margin: 0 0 52px 0;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .card {
+      display: block;
+      background: #eef3f3;
+      padding: 34px 30px 30px 30px;
+      text-decoration: none;
+      color: #111111;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      background: #e7eeee;
+      transform: translateY(-1px);
     }
 
     h2 {
@@ -117,134 +140,30 @@
     .section-subtitle {
       font-size: 20px;
       line-height: 1.35;
-      margin: 0 0 20px 0;
+      margin: 0 0 18px 0;
       max-width: 560px;
     }
 
-    p {
-      font-size: 19px;
-      line-height: 1.5;
+    .card p {
       margin: 0 0 14px 0;
-      max-width: 700px;
-      text-align: justify;
-      hyphens: auto;
+      max-width: 660px;
     }
 
-    .carousel {
-      position: relative;
-      margin: 30px 0 20px 0;
-    }
-
-    .carousel-viewport {
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.4s ease;
-      will-change: transform;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .carousel-slide img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 78vh;
-      object-fit: contain;
-      margin: 0 auto;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(17, 17, 17, 0.15);
-      background: rgba(255, 255, 255, 0.75);
-      color: #111111;
-      cursor: pointer;
-      font-size: 20px;
-      line-height: 1;
-      padding: 0;
-    }
-
-    .carousel-button:hover {
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    .carousel-button.prev {
-      left: 10px;
-    }
-
-    .carousel-button.next {
-      right: 10px;
-    }
-
-    .carousel-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: none;
-      background: #cfcfcf;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    .carousel-dot.active {
-      background: #111111;
-    }
-
-    .pdf-link,
-    .audio-link,
-    .back-link {
+    .block-link {
       display: inline-block;
-      margin-top: 14px;
+      margin-top: 12px;
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
       color: #111111;
       border-bottom: 1px solid #111111;
       padding-bottom: 2px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .pdf-link:hover,
-    .audio-link:hover,
-    .back-link:hover {
+    .card:hover .block-link {
       color: #ff6600;
       border-bottom-color: #ff6600;
-    }
-
-    .audio-block {
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid #d4dddd;
-    }
-
-    .audio-player {
-      margin: 16px 0 8px 0;
-      max-width: 720px;
-    }
-
-    .audio-player audio {
-      width: 100%;
-      max-width: 720px;
     }
 
     a {
@@ -282,7 +201,11 @@
       }
 
       .text-block {
-        margin-bottom: 48px;
+        margin-bottom: 40px;
+      }
+
+      .card {
+        padding: 24px 18px 20px 18px;
       }
 
       .section-subtitle {
@@ -291,21 +214,12 @@
         margin-bottom: 16px;
       }
 
-      p {
+      p,
+      .card p {
         font-size: 18px;
         line-height: 1.45;
         text-align: justify;
         hyphens: auto;
-      }
-
-      .carousel-button {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
-      }
-
-      .carousel-slide img {
-        max-height: 68vh;
       }
     }
   </style>
@@ -323,162 +237,40 @@
     <header>
       <h1>Installations</h1>
       <p class="intro">
-        Formes, matières, sons, images et circulations dans des dispositifs de présence.
+        Formes, matières, sons, images et dispositifs de présence.
       </p>
       <div class="header-rule"></div>
     </header>
 
-    <section class="text-block" id="circuitato">
-      <h2>Silicone connections / CIRCUITATO</h2>
-      <p class="section-subtitle">
-        Installation
-      </p>
-
+    <section class="text-block">
       <p>
-        <em>Silicone connections / CIRCUITATO</em> est une installation conçue comme un dispositif de circulation, de mémoire et de transformation. La composition visuelle et la composition sonore y forment un ensemble traversé par une temporalité lente, faite de retours, de dépôts, de reprises et de passages.
+        Cette page rassemble des ensembles d’installations conçus comme des champs de perception, de circulation et de mémoire. Chaque entrée ouvre vers un espace dédié, où les pièces peuvent être abordées dans leur durée propre, avec leurs images, leurs sons et leurs documents.
       </p>
 
-      <p>
-        Le fond de la pièce est constitué de 104 photographies d’archive retravaillées. Ces images ne visent pas une restitution documentaire du réel. Elles agissent plutôt comme des surfaces d’inscription : elles portent la trace de pressions historiques, de prises, de pillages, de mises sous tutelle, et de la manière dont ces violences se prolongent dans les corps, les pratiques, les récits et les mémoires.
-      </p>
+      <div class="cards">
+        <a class="card" href="circuitato.html">
+          <h2>Silicone connections / CIRCUITATO</h2>
+          <p class="section-subtitle">
+            Installation
+          </p>
+          <p>
+            <em>Silicone connections / CIRCUITATO</em> déploie un dispositif de circulation, de mémoire et de transformation où composition visuelle et composition sonore avancent par cycles, dépôts, reprises et passages.
+          </p>
+          <span class="block-link">Entrer</span>
+        </a>
 
-      <p>
-        Inspirée par l’<em>Arbor Vegetalis</em> de Ramon Llull, l’installation prend la forme d’un athanor à ciel ouvert, un laboratoire sans parois où matières visuelles et sonores dialoguent par cycles. L’alchimie n’y intervient pas comme décor symbolique, mais comme principe de composition : faire circuler, filtrer, déposer, transformer.
-      </p>
-
-      <p>
-        La partition sonore de Zeden accompagne ce mouvement de durée. Elle ne se contente pas d’habiter l’espace : elle le module, l’imprègne et y dépose une mémoire invisible. L’installation propose ainsi moins un récit qu’un champ de persistance, où l’image, la matière et le son deviennent les agents d’une reprise.
-      </p>
-
-      <div class="carousel" id="carousel-circuitato">
-        <button class="carousel-button prev" aria-label="Image précédente">‹</button>
-
-        <div class="carousel-viewport">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img src="circuitato-0.jpg" alt="Image 1 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-01.jpg" alt="Image 2 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-02.jpg" alt="Image 3 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-03.jpg" alt="Image 4 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-04.jpg" alt="Image 5 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-05.jpg" alt="Image 6 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-06.jpg" alt="Image 7 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-07.jpg" alt="Image 8 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-08.jpg" alt="Image 9 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-09.jpg" alt="Image 10 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-10.jpg" alt="Image 11 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-11.jpg" alt="Image 12 de Silicone connections / CIRCUITATO." />
-            </div>
-            <div class="carousel-slide">
-              <img src="circuitato-12.jpg" alt="Image 13 de Silicone connections / CIRCUITATO." />
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-button next" aria-label="Image suivante">›</button>
-
-        <div class="carousel-nav">
-          <button class="carousel-dot active" aria-label="Aller à l’image 1"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 2"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 3"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 4"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 5"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 6"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 7"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 8"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 9"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 10"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 11"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 12"></button>
-          <button class="carousel-dot" aria-label="Aller à l’image 13"></button>
-        </div>
-      </div>
-
-      <a class="pdf-link" href="s-c-circuitato.pdf" target="_blank" rel="noopener noreferrer">
-        Télécharger le dossier PDF
-      </a>
-
-      <div class="audio-block">
-        <h2>Son</h2>
-        <p class="section-subtitle">
-          Partition sonore
-        </p>
-
-        <div class="audio-player">
-          <audio controls preload="none">
-            <source src="VEGETALIS%20v2.mp3" type="audio/mpeg" />
-            Votre navigateur ne prend pas en charge la lecture audio.
-          </audio>
-        </div>
-
-        <a class="audio-link" href="VEGETALIS%20v2.mp3" target="_blank" rel="noopener noreferrer">
-          Écouter ou télécharger le fichier sonore
+        <a class="card" href="installations-2014-2020.html">
+          <h2>Installations 2014 - 2020</h2>
+          <p class="section-subtitle">
+            Archives
+          </p>
+          <p>
+            Cette entrée rassemble un ensemble d’installations réalisées entre 2014 et 2020. Elle fonctionne comme une zone d’archives : formes, dispositifs, vues d’exposition et états de travail y apparaissent moins comme un corpus clos que comme des traces d’expérimentations, de montages et de présences.
+          </p>
+          <span class="block-link">Entrer</span>
         </a>
       </div>
     </section>
-
-    <a class="back-link" href="arts-visuels.html">Retour à Arts visuels</a>
   </div>
-
-  <script>
-    function initCarousel(carouselId) {
-      const carousel = document.getElementById(carouselId);
-      const track = carousel.querySelector('.carousel-track');
-      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-      const prevButton = carousel.querySelector('.carousel-button.prev');
-      const nextButton = carousel.querySelector('.carousel-button.next');
-      const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
-
-      let currentIndex = 0;
-
-      function updateCarousel() {
-        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-      }
-
-      prevButton.addEventListener('click', function () {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
-      });
-
-      nextButton.addEventListener('click', function () {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-      });
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-          currentIndex = index;
-          updateCarousel();
-        });
-      });
-    }
-
-    initCarousel('carousel-circuitato');
-  </script>
 </body>
-        </html>
+</html>
