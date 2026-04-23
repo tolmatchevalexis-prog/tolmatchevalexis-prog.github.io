@@ -45,7 +45,8 @@
     h1,
     h2,
     .section-link,
-    .intro {
+    .intro,
+    .panel-link-label {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -118,10 +119,22 @@
       height: auto;
     }
 
+    .panel-link {
+      display: block;
+      text-decoration: none;
+      color: #111111;
+    }
+
     .panel {
       background: #eef3f3;
       padding: 40px 34px 34px 34px;
       margin: 0 0 64px 0;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .panel-link:hover .panel {
+      background: #e7eeee;
+      transform: translateY(-1px);
     }
 
     h2 {
@@ -159,20 +172,19 @@
       hyphens: auto;
     }
 
-    .section-link {
+    .panel-link-label {
       display: inline-block;
       margin-top: 14px;
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
       color: #111111;
       border-bottom: 1px solid #111111;
       padding-bottom: 2px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .section-link:hover {
+    .panel-link:hover .panel-link-label {
       color: #ff6600;
       border-bottom-color: #ff6600;
     }
@@ -259,35 +271,39 @@
       <img src="home-01.jpg" alt="Composition graphique abstraite autour d’un visage stylisé." />
     </figure>
 
-    <section id="arts-visuels" class="panel">
-      <h2><a href="arts-visuels.html">Arts visuels</a></h2>
-      <p class="section-subtitle">
-        Sculptures, masques, parures et dispositifs de présence
-      </p>
+    <a class="panel-link" href="arts-visuels.html">
+      <section id="arts-visuels" class="panel">
+        <h2>Arts visuels</h2>
+        <p class="section-subtitle">
+          Sculptures, masques, parures et dispositifs de présence
+        </p>
 
-      <p>
-        Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des seuils à activer. Masques, parures, objets et installations déplacent le regard, chargent la matière et ouvrent un autre régime de présence.
-      </p>
+        <p>
+          Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des seuils à activer. Masques, parures, objets et installations déplacent le regard, chargent la matière et ouvrent un autre régime de présence.
+        </p>
 
-      <a class="section-link" href="arts-visuels.html">Voir les pièces</a>
-    </section>
+        <span class="panel-link-label">Voir les pièces</span>
+      </section>
+    </a>
 
     <figure class="home-image">
       <img src="home-02.jpg" alt="Composition abstraite bleue et blanche, atmosphérique." />
     </figure>
 
-    <section id="ecriture" class="panel">
-      <h2><a href="ecriture.html">Écriture</a></h2>
-      <p class="section-subtitle">
-        Contes, fragments, textes d’atelier et romans en cours
-      </p>
+    <a class="panel-link" href="ecriture.html">
+      <section id="ecriture" class="panel">
+        <h2>Écriture</h2>
+        <p class="section-subtitle">
+          Contes, fragments, textes d’atelier et romans en cours
+        </p>
 
-      <p>
-        L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle rassemble contes, récits, journal d’atelier et recherches en cours, dans une langue de veille, de mémoire et de traversée.
-      </p>
+        <p>
+          L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle rassemble contes, récits, journal d’atelier et recherches en cours, dans une langue de veille, de mémoire et de traversée.
+        </p>
 
-      <a class="section-link" href="ecriture.html">Lire</a>
-    </section>
+        <span class="panel-link-label">Lire</span>
+      </section>
+    </a>
 
     <div class="section-rule bottom"></div>
   </div>
