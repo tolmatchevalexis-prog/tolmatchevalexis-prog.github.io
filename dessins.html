@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Dessins — Alexis Tolmatchev</title>
+  <meta name="description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/dessins.html" />
+
+  <meta property="og:title" content="Dessins — Alexis Tolmatchev" />
+  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/dessins.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dessins — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 30px 120px;
+    }
+
+    nav,
+    h1,
+    h2,
+    .intro,
+    .back-link,
+    .drawing-label {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p,
+    .section-subtitle {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 54px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px 0;
+    }
+
+    .intro {
+      font-size: 15px;
+      line-height: 1.35;
+      margin: 0 0 34px 0;
+      max-width: 720px;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
+    }
+
+    .text-block {
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      margin: 0 0 56px 0;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+      gap: 10px;
+      justify-content: start;
+      margin-top: 28px;
+    }
+
+    .tile {
+      width: 100px;
+      height: 100px;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      background: var(--tile-color);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .tile:hover {
+      transform: scale(0.98);
+      opacity: 0.92;
+    }
+
+    .tile:focus-visible {
+      outline: 2px solid #111111;
+      outline-offset: 2px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.98);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      max-width: 100%;
+    }
+
+    .lightbox-drawing {
+      width: min(92vw, 900px);
+      aspect-ratio: 900 / 1400;
+      background: var(--lightbox-color, #dddddd);
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08);
+    }
+
+    .drawing-label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111111;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 42px;
+        margin-bottom: 16px;
+      }
+
+      .intro {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 28px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.45;
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      .grid {
+        gap: 8px;
+      }
+
+      .tile {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="arts-visuels.html">Arts visuels</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+      <h1>Dessins</h1>
+      <p class="intro">
+        Fragments, ouvertures et formes en veille.
+      </p>
+      <div class="header-rule"></div>
+    </header>
+
+    <section class="text-block">
+      <p>
+        Cette page fonctionne comme une grille de fragments. Chaque carré ouvre un dessin dans un format plus ample, sur fond blanc. Pour l’instant, il s’agit d’un test de structure et de rythme avant l’intégration des images définitives.
+      </p>
+
+      <div class="grid" id="drawing-grid"></div>
+
+      <a class="back-link" href="arts-visuels.html">Retour à Arts visuels</a>
+    </section>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <div class="lightbox-drawing" id="lightbox-drawing"></div>
+      <div class="drawing-label" id="drawing-label">Dessin</div>
+    </div>
+  </div>
+
+  <script>
+    const colors = [
+      "#d8d8d8", "#c8d6d3", "#d5d0c8", "#d9c8c8", "#c8cfd9",
+      "#d7d2c6", "#cfd6c8", "#d6cfd9", "#d4d4c7", "#c9d9d7",
+      "#ddd2c5", "#cfcfcf", "#d7cfd2", "#cbd6de", "#d8d1cb",
+      "#d3d9cf", "#d9d4c9", "#ced4d9", "#d9cfc7", "#d1d8d1",
+      "#d7d7d0", "#cccfd6", "#d8cfcf", "#cfd8d4", "#ddd6cb",
+      "#d4cfd8", "#cfd3cf", "#d7d1d8", "#d8d4cf", "#d2d7d9",
+      "#d9d2d2", "#cfd8da", "#d7d0c8", "#d2d5cb", "#d8d8d8",
+      "#cbcfd1", "#d7d4d0", "#d3cec9", "#d0d7d5", "#d9d6cf"
+    ];
+
+    const grid = document.getElementById("drawing-grid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxDrawing = document.getElementById("lightbox-drawing");
+    const drawingLabel = document.getElementById("drawing-label");
+
+    colors.forEach((color, index) => {
+      const button = document.createElement("button");
+      button.className = "tile";
+      button.type = "button";
+      button.style.setProperty("--tile-color", color);
+      button.setAttribute("aria-label", `Ouvrir le dessin ${index + 1}`);
+
+      button.addEventListener("click", () => {
+        lightboxDrawing.style.setProperty("--lightbox-color", color);
+        drawingLabel.textContent = `Dessin ${index + 1}`;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+
+      grid.appendChild(button);
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox || event.target === lightboxDrawing) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+  </html>
