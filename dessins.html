@@ -45,7 +45,8 @@
     h1,
     .intro,
     .back-link,
-    .drawing-label {
+    .drawing-label,
+    .reset-button {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -218,6 +219,7 @@
       color: #111111;
     }
 
+    .reset-button,
     .back-link {
       display: inline-block;
       margin-top: 18px;
@@ -226,11 +228,19 @@
       text-transform: uppercase;
       text-decoration: none;
       color: #111111;
+      border: none;
       border-bottom: 1px solid #111111;
-      padding-bottom: 2px;
+      padding: 0 0 2px 0;
+      background: none;
+      cursor: pointer;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
+    .reset-button {
+      margin-right: 18px;
+    }
+
+    .reset-button:hover,
     .back-link:hover {
       color: #ff6600;
       border-bottom-color: #ff6600;
@@ -338,6 +348,10 @@
 
       <div class="grid" id="drawing-grid"></div>
 
+      <button class="reset-button" id="reset-drawings" type="button">
+        Réinitialiser la grille
+      </button>
+
       <a class="back-link" href="arts-visuels.html">Retour à Arts visuels</a>
     </section>
   </div>
@@ -376,6 +390,7 @@
     const lightbox = document.getElementById("lightbox");
     const lightboxDrawing = document.getElementById("lightbox-drawing");
     const drawingLabel = document.getElementById("drawing-label");
+    const resetButton = document.getElementById("reset-drawings");
     const storageKey = "alexis-dessins-seen";
 
     function getSeenDrawings() {
@@ -429,6 +444,13 @@
       });
 
       grid.appendChild(button);
+    });
+
+    resetButton.addEventListener("click", () => {
+      localStorage.removeItem(storageKey);
+      document.querySelectorAll(".tile.seen").forEach((tile) => {
+        tile.classList.remove("seen");
+      });
     });
 
     function closeLightbox() {
