@@ -127,20 +127,21 @@
     }
 
     .tile {
+      position: relative;
       width: 100px;
       height: 100px;
       overflow: hidden;
       border: none;
       padding: 0;
       margin: 0;
-      background: #f2f2f2;
+      background: #eef3f3;
       cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s ease;
     }
 
     .tile:hover {
       transform: scale(0.98);
-      opacity: 0.92;
+      opacity: 0.96;
     }
 
     .tile:focus-visible {
@@ -153,7 +154,28 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: saturate(0.98);
+      transition: opacity 0.2s ease;
+    }
+
+    .tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(238, 243, 243, 0.58);
+      pointer-events: none;
+      transition: background 0.2s ease;
+    }
+
+    .tile.seen {
+      background: #ff6600;
+    }
+
+    .tile.seen img {
+      opacity: 0;
+    }
+
+    .tile.seen::after {
+      background: transparent;
     }
 
     .lightbox {
@@ -328,47 +350,67 @@
   </div>
 
   <script>
-    const drawings = [
-      { file: "dessins-01.jpg", x: "17%", y: "23%" },
-      { file: "dessins-02.jpg", x: "68%", y: "14%" },
-      { file: "dessins-03.jpg", x: "29%", y: "77%" },
-      { file: "dessins-04.jpg", x: "81%", y: "42%" },
-      { file: "dessins-05.jpg", x: "12%", y: "61%" },
-      { file: "dessins-06.jpg", x: "56%", y: "18%" },
-      { file: "dessins-07.jpg", x: "74%", y: "71%" },
-      { file: "dessins-08.jpg", x: "21%", y: "48%" },
-      { file: "dessins-09.jpg", x: "63%", y: "84%" },
-      { file: "dessins-10.jpg", x: "38%", y: "27%" },
-      { file: "dessins-11.jpg", x: "85%", y: "56%" },
-      { file: "dessins-12.jpg", x: "14%", y: "36%" },
-      { file: "dessins-13.jpg", x: "47%", y: "79%" },
-      { file: "dessins-14.jpg", x: "72%", y: "24%" },
-      { file: "dessins-15.jpg", x: "26%", y: "67%" },
-      { file: "dessins-16.jpg", x: "59%", y: "11%" },
-      { file: "dessins-17.jpg", x: "88%", y: "73%" },
-      { file: "dessins-18.jpg", x: "19%", y: "53%" },
-      { file: "dessins-19.jpg", x: "66%", y: "31%" },
-      { file: "dessins-20.jpg", x: "34%", y: "86%" },
-      { file: "dessins-21.jpg", x: "78%", y: "16%" },
-      { file: "dessins-22.jpg", x: "11%", y: "69%" },
-      { file: "dessins-23.jpg", x: "52%", y: "44%" },
-      { file: "dessins-24.jpg", x: "83%", y: "82%" },
-      { file: "dessins-25.jpg", x: "24%", y: "19%" },
-      { file: "dessins-26.jpg", x: "61%", y: "58%" },
-      { file: "dessins-27.jpg", x: "41%", y: "12%" },
-      { file: "dessins-28.jpg", x: "76%", y: "63%" }
+    const positions = [
+      ["17%", "23%"], ["68%", "14%"], ["29%", "77%"], ["81%", "42%"],
+      ["12%", "61%"], ["56%", "18%"], ["74%", "71%"], ["21%", "48%"],
+      ["63%", "84%"], ["38%", "27%"], ["85%", "56%"], ["14%", "36%"],
+      ["47%", "79%"], ["72%", "24%"], ["26%", "67%"], ["59%", "11%"],
+      ["88%", "73%"], ["19%", "53%"], ["66%", "31%"], ["34%", "86%"],
+      ["78%", "16%"], ["11%", "69%"], ["52%", "44%"], ["83%", "82%"],
+      ["24%", "19%"], ["61%", "58%"], ["41%", "12%"], ["76%", "63%"],
+      ["15%", "47%"], ["69%", "22%"], ["32%", "74%"], ["84%", "37%"],
+      ["22%", "83%"], ["57%", "29%"]
     ];
+
+    const drawings = Array.from({ length: 34 }, (_, index) => {
+      const number = String(index + 1).padStart(2, "0");
+      return {
+        id: number,
+        file: `dessins-${number}.jpg`,
+        x: positions[index][0],
+        y: positions[index][1]
+      };
+    });
 
     const grid = document.getElementById("drawing-grid");
     const lightbox = document.getElementById("lightbox");
     const lightboxDrawing = document.getElementById("lightbox-drawing");
     const drawingLabel = document.getElementById("drawing-label");
+    const storageKey = "alexis-dessins-seen";
+
+    function getSeenDrawings() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveSeenDrawings(seen) {
+      localStorage.setItem(storageKey, JSON.stringify(seen));
+    }
+
+    function markAsSeen(id, button) {
+      const seen = getSeenDrawings();
+      if (!seen.includes(id)) {
+        seen.push(id);
+        saveSeenDrawings(seen);
+      }
+      button.classList.add("seen");
+    }
+
+    const seenDrawings = getSeenDrawings();
 
     drawings.forEach((drawing, index) => {
       const button = document.createElement("button");
       button.className = "tile";
       button.type = "button";
       button.setAttribute("aria-label", `Ouvrir le dessin ${index + 1}`);
+      button.dataset.id = drawing.id;
+
+      if (seenDrawings.includes(drawing.id)) {
+        button.classList.add("seen");
+      }
 
       const img = document.createElement("img");
       img.src = drawing.file;
@@ -378,9 +420,10 @@
       button.appendChild(img);
 
       button.addEventListener("click", () => {
+        markAsSeen(drawing.id, button);
         lightboxDrawing.src = drawing.file;
         lightboxDrawing.alt = `Dessin ${index + 1}`;
-        drawingLabel.textContent = `Dessin ${String(index + 1).padStart(2, "0")}`;
+        drawingLabel.textContent = `Dessin ${drawing.id}`;
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
       });
