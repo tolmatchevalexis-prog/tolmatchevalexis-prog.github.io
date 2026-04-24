@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dessins — Alexis Tolmatchev</title>
-  <meta name="description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+  <meta name="description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
   <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/dessins.html" />
 
   <meta property="og:title" content="Dessins — Alexis Tolmatchev" />
-  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/dessins.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/dessins-01.jpg" />
+  <meta property="og:image:alt" content="Dessin d’Alexis Tolmatchev." />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dessins — Alexis Tolmatchev" />
-  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Grille de fragments, ouvertures et formes en veille." />
+  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/dessins-01.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,7 +43,6 @@
 
     nav,
     h1,
-    h2,
     .intro,
     .back-link,
     .drawing-label {
@@ -127,11 +129,12 @@
     .tile {
       width: 100px;
       height: 100px;
+      overflow: hidden;
       border: none;
       padding: 0;
       margin: 0;
+      background: #f2f2f2;
       cursor: pointer;
-      background: var(--tile-color);
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
@@ -143,6 +146,14 @@
     .tile:focus-visible {
       outline: 2px solid #111111;
       outline-offset: 2px;
+    }
+
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.98);
     }
 
     .lightbox {
@@ -170,9 +181,11 @@
 
     .lightbox-drawing {
       width: min(92vw, 900px);
-      aspect-ratio: 900 / 1400;
-      background: var(--lightbox-color, #dddddd);
+      max-height: 78vh;
+      height: auto;
+      display: block;
       cursor: pointer;
+      background: #ffffff;
       box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08);
     }
 
@@ -309,21 +322,41 @@
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-inner">
-      <div class="lightbox-drawing" id="lightbox-drawing"></div>
+      <img class="lightbox-drawing" id="lightbox-drawing" src="" alt="">
       <div class="drawing-label" id="drawing-label">Dessin</div>
     </div>
   </div>
 
   <script>
-    const colors = [
-      "#d8d8d8", "#c8d6d3", "#d5d0c8", "#d9c8c8", "#c8cfd9",
-      "#d7d2c6", "#cfd6c8", "#d6cfd9", "#d4d4c7", "#c9d9d7",
-      "#ddd2c5", "#cfcfcf", "#d7cfd2", "#cbd6de", "#d8d1cb",
-      "#d3d9cf", "#d9d4c9", "#ced4d9", "#d9cfc7", "#d1d8d1",
-      "#d7d7d0", "#cccfd6", "#d8cfcf", "#cfd8d4", "#ddd6cb",
-      "#d4cfd8", "#cfd3cf", "#d7d1d8", "#d8d4cf", "#d2d7d9",
-      "#d9d2d2", "#cfd8da", "#d7d0c8", "#d2d5cb", "#d8d8d8",
-      "#cbcfd1", "#d7d4d0", "#d3cec9", "#d0d7d5", "#d9d6cf"
+    const drawings = [
+      { file: "dessins-01.jpg", x: "17%", y: "23%" },
+      { file: "dessins-02.jpg", x: "68%", y: "14%" },
+      { file: "dessins-03.jpg", x: "29%", y: "77%" },
+      { file: "dessins-04.jpg", x: "81%", y: "42%" },
+      { file: "dessins-05.jpg", x: "12%", y: "61%" },
+      { file: "dessins-06.jpg", x: "56%", y: "18%" },
+      { file: "dessins-07.jpg", x: "74%", y: "71%" },
+      { file: "dessins-08.jpg", x: "21%", y: "48%" },
+      { file: "dessins-09.jpg", x: "63%", y: "84%" },
+      { file: "dessins-10.jpg", x: "38%", y: "27%" },
+      { file: "dessins-11.jpg", x: "85%", y: "56%" },
+      { file: "dessins-12.jpg", x: "14%", y: "36%" },
+      { file: "dessins-13.jpg", x: "47%", y: "79%" },
+      { file: "dessins-14.jpg", x: "72%", y: "24%" },
+      { file: "dessins-15.jpg", x: "26%", y: "67%" },
+      { file: "dessins-16.jpg", x: "59%", y: "11%" },
+      { file: "dessins-17.jpg", x: "88%", y: "73%" },
+      { file: "dessins-18.jpg", x: "19%", y: "53%" },
+      { file: "dessins-19.jpg", x: "66%", y: "31%" },
+      { file: "dessins-20.jpg", x: "34%", y: "86%" },
+      { file: "dessins-21.jpg", x: "78%", y: "16%" },
+      { file: "dessins-22.jpg", x: "11%", y: "69%" },
+      { file: "dessins-23.jpg", x: "52%", y: "44%" },
+      { file: "dessins-24.jpg", x: "83%", y: "82%" },
+      { file: "dessins-25.jpg", x: "24%", y: "19%" },
+      { file: "dessins-26.jpg", x: "61%", y: "58%" },
+      { file: "dessins-27.jpg", x: "41%", y: "12%" },
+      { file: "dessins-28.jpg", x: "76%", y: "63%" }
     ];
 
     const grid = document.getElementById("drawing-grid");
@@ -331,16 +364,23 @@
     const lightboxDrawing = document.getElementById("lightbox-drawing");
     const drawingLabel = document.getElementById("drawing-label");
 
-    colors.forEach((color, index) => {
+    drawings.forEach((drawing, index) => {
       const button = document.createElement("button");
       button.className = "tile";
       button.type = "button";
-      button.style.setProperty("--tile-color", color);
       button.setAttribute("aria-label", `Ouvrir le dessin ${index + 1}`);
 
+      const img = document.createElement("img");
+      img.src = drawing.file;
+      img.alt = `Détail du dessin ${index + 1}`;
+      img.style.objectPosition = `${drawing.x} ${drawing.y}`;
+
+      button.appendChild(img);
+
       button.addEventListener("click", () => {
-        lightboxDrawing.style.setProperty("--lightbox-color", color);
-        drawingLabel.textContent = `Dessin ${index + 1}`;
+        lightboxDrawing.src = drawing.file;
+        lightboxDrawing.alt = `Dessin ${index + 1}`;
+        drawingLabel.textContent = `Dessin ${String(index + 1).padStart(2, "0")}`;
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
       });
@@ -351,6 +391,8 @@
     function closeLightbox() {
       lightbox.classList.remove("open");
       lightbox.setAttribute("aria-hidden", "true");
+      lightboxDrawing.src = "";
+      lightboxDrawing.alt = "";
     }
 
     lightbox.addEventListener("click", function (event) {
