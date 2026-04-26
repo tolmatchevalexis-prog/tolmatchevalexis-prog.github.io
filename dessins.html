@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dessins — Alexis Tolmatchev</title>
-  <meta name="description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
+  <meta name="description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Aux arbres." />
   <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/dessins.html" />
 
   <meta property="og:title" content="Dessins — Alexis Tolmatchev" />
-  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
+  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Aux arbres." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/dessins.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
@@ -19,7 +19,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dessins — Alexis Tolmatchev" />
-  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Carnets, surgissements, mémoire du noir." />
+  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Aux arbres." />
   <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/dessins-01.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -81,6 +81,7 @@
       font-weight: 500;
       letter-spacing: -0.02em;
       margin: 0 0 20px 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .intro {
@@ -110,6 +111,20 @@
       max-width: 700px;
     }
 
+    .grid-title {
+      font-size: 20px;
+      line-height: 1.35;
+      margin: 40px 0 18px 0;
+      max-width: 700px;
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    .grid-title:first-of-type {
+      margin-top: 34px;
+    }
+
     p {
       font-size: 19px;
       line-height: 1.5;
@@ -124,7 +139,11 @@
       grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
       gap: 10px;
       justify-content: start;
-      margin-top: 34px;
+      margin-top: 0;
+    }
+
+    .grid + .grid-title {
+      margin-top: 46px;
     }
 
     .tile {
@@ -226,7 +245,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 14px;
-      margin-top: 18px;
+      margin-top: 24px;
     }
 
     .reset-button,
@@ -276,10 +295,19 @@
         margin-bottom: 44px;
       }
 
-      .section-subtitle {
+      .section-subtitle,
+      .grid-title {
         font-size: 19px;
         line-height: 1.3;
+      }
+
+      .section-subtitle {
         margin-bottom: 18px;
+      }
+
+      .grid-title {
+        margin-top: 34px;
+        margin-bottom: 14px;
       }
 
       p {
@@ -351,7 +379,17 @@
         Dessiner, c’est accueillir le je-ne-sais-quoi en donnant la main au « je est un autre ». C’est donner à l’informe une chance de paraître. C’est accepter ce qui monte d’une zone encore sans langage, et lui donner une première hospitalité. Le dessin est l’un des lieux originaires où la forme naît de presque rien.
       </p>
 
-      <div class="grid" id="drawing-grid"></div>
+      <p class="grid-title">
+        Apocalipstick — dessins automatiques
+      </p>
+
+      <div class="grid" id="drawing-grid-apoca"></div>
+
+      <p class="grid-title">
+        Aux arbres
+      </p>
+
+      <div class="grid" id="drawing-grid-arbres"></div>
 
       <div class="controls">
         <button class="reset-button" id="reset-drawings" type="button">
@@ -371,34 +409,41 @@
   </div>
 
   <script>
-    const positions = [
-      ["17%", "23%"], ["68%", "14%"], ["29%", "77%"], ["81%", "42%"],
-      ["12%", "61%"], ["56%", "18%"], ["74%", "71%"], ["21%", "48%"],
-      ["63%", "84%"], ["38%", "27%"], ["85%", "56%"], ["14%", "36%"],
-      ["47%", "79%"], ["72%", "24%"], ["26%", "67%"], ["59%", "11%"],
-      ["88%", "73%"], ["19%", "53%"], ["66%", "31%"], ["34%", "86%"],
-      ["78%", "16%"], ["11%", "69%"], ["52%", "44%"], ["83%", "82%"],
-      ["24%", "19%"], ["61%", "58%"], ["41%", "12%"], ["76%", "63%"],
-      ["15%", "47%"], ["69%", "22%"], ["32%", "74%"], ["84%", "37%"],
-      ["22%", "83%"], ["57%", "29%"]
-    ];
+    function fixedPosition(seed) {
+      const x = 12 + ((seed * 37) % 77);
+      const y = 12 + ((seed * 53) % 77);
+      return [x + "%", y + "%"];
+    }
 
-    const drawings = Array.from({ length: 34 }, (_, index) => {
+    const apocaDrawings = Array.from({ length: 60 }, (_, index) => {
       const number = String(index + 1).padStart(2, "0");
+      const [x, y] = fixedPosition(index + 1);
       return {
-        id: number,
-        file: `dessins-${number}.jpg`,
-        x: positions[index][0],
-        y: positions[index][1]
+        id: "apoca-" + number,
+        label: "Apocalipstick " + number,
+        file: "dessins-" + number + ".jpg",
+        x,
+        y
       };
     });
 
-    const grid = document.getElementById("drawing-grid");
+    const arbresDrawings = Array.from({ length: 30 }, (_, index) => {
+      const number = String(index + 1).padStart(2, "0");
+      const [x, y] = fixedPosition(index + 101);
+      return {
+        id: "arbres-" + number,
+        label: "Aux arbres " + number,
+        file: "arbres-" + number + ".jpg",
+        x,
+        y
+      };
+    });
+
     const lightbox = document.getElementById("lightbox");
     const lightboxDrawing = document.getElementById("lightbox-drawing");
     const drawingLabel = document.getElementById("drawing-label");
     const resetButton = document.getElementById("reset-drawings");
-    const storageKey = "alexis-dessins-seen";
+    const storageKey = "alexis-dessins-seen-v2";
 
     function getSeenDrawings() {
       try {
@@ -423,36 +468,43 @@
 
     const seenDrawings = getSeenDrawings();
 
-    drawings.forEach((drawing, index) => {
-      const button = document.createElement("button");
-      button.className = "tile";
-      button.type = "button";
-      button.setAttribute("aria-label", `Ouvrir le dessin ${index + 1}`);
-      button.dataset.id = drawing.id;
-      button.style.setProperty("--focus-x", drawing.x);
-      button.style.setProperty("--focus-y", drawing.y);
+    function buildGrid(containerId, items) {
+      const container = document.getElementById(containerId);
 
-      if (seenDrawings.includes(drawing.id)) {
-        button.classList.add("seen");
-      }
+      items.forEach((drawing) => {
+        const button = document.createElement("button");
+        button.className = "tile";
+        button.type = "button";
+        button.setAttribute("aria-label", "Ouvrir " + drawing.label);
+        button.dataset.id = drawing.id;
+        button.style.setProperty("--focus-x", drawing.x);
+        button.style.setProperty("--focus-y", drawing.y);
 
-      const img = document.createElement("img");
-      img.src = drawing.file;
-      img.alt = `Détail du dessin ${index + 1}`;
+        if (seenDrawings.includes(drawing.id)) {
+          button.classList.add("seen");
+        }
 
-      button.appendChild(img);
+        const img = document.createElement("img");
+        img.src = drawing.file;
+        img.alt = "Détail de " + drawing.label;
 
-      button.addEventListener("click", () => {
-        markAsSeen(drawing.id, button);
-        lightboxDrawing.src = drawing.file;
-        lightboxDrawing.alt = `Dessin ${index + 1}`;
-        drawingLabel.textContent = `Dessin ${drawing.id}`;
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
+        button.appendChild(img);
+
+        button.addEventListener("click", () => {
+          markAsSeen(drawing.id, button);
+          lightboxDrawing.src = drawing.file;
+          lightboxDrawing.alt = drawing.label;
+          drawingLabel.textContent = drawing.label;
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+        });
+
+        container.appendChild(button);
       });
+    }
 
-      grid.appendChild(button);
-    });
+    buildGrid("drawing-grid-apoca", apocaDrawings);
+    buildGrid("drawing-grid-arbres", arbresDrawings);
 
     resetButton.addEventListener("click", () => {
       localStorage.removeItem(storageKey);
