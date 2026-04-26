@@ -46,7 +46,8 @@
     h2,
     .section-link,
     .intro,
-    .panel-link-label {
+    .panel-link-label,
+    .image-swap {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -76,18 +77,17 @@
     }
 
     h1 {
-      font-size: 54px;
+      font-size: 50px;
       line-height: 1.02;
       font-weight: 500;
       letter-spacing: -0.02em;
-      margin: 0 0 20px 0;
+      margin: 0 0 18px 0;
     }
 
     .intro {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 1.35;
       max-width: none;
-      white-space: nowrap;
       margin: 0 0 34px 0;
     }
 
@@ -113,10 +113,48 @@
       margin: 0;
     }
 
-    .home-image img {
+    .image-swap {
+      position: relative;
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+      cursor: default;
+      overflow: hidden;
+    }
+
+    .image-swap img {
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    .image-swap .primary-image,
+    .image-swap .secondary-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-swap .secondary-image {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .image-swap:hover .secondary-image,
+    .image-swap:focus-visible .secondary-image,
+    .image-swap.is-alt .secondary-image {
+      opacity: 1;
+    }
+
+    .image-swap:focus-visible {
+      outline: 2px solid #111111;
+      outline-offset: 2px;
     }
 
     .panel-link {
@@ -138,22 +176,11 @@
     }
 
     h2 {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       margin: 0 0 14px 0;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-    }
-
-    h2 a {
-      color: #111111;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    h2 a:hover {
-      color: #ff6600;
-      text-decoration: underline;
     }
 
     .section-subtitle {
@@ -209,14 +236,13 @@
       }
 
       h1 {
-        font-size: 42px;
-        margin-bottom: 16px;
+        font-size: 44px;
+        margin-bottom: 14px;
       }
 
       .intro {
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.3;
-        white-space: nowrap;
         margin-bottom: 28px;
       }
 
@@ -231,6 +257,10 @@
       .panel {
         padding: 24px 18px 20px 18px;
         margin: 0 0 40px 0;
+      }
+
+      h2 {
+        font-size: 13px;
       }
 
       .section-subtitle {
@@ -268,7 +298,10 @@
     </header>
 
     <figure class="home-image">
-      <img src="home-01.jpg" alt="Composition graphique abstraite autour d’un visage stylisé." />
+      <button class="image-swap" type="button" aria-label="Voir une variation de l’image Arts visuels">
+        <img class="primary-image" src="home-01.jpg" alt="Composition graphique abstraite autour d’un visage stylisé." />
+        <img class="secondary-image" src="homex-01.jpg" alt="" aria-hidden="true" />
+      </button>
     </figure>
 
     <a class="panel-link" href="arts-visuels.html">
@@ -279,8 +312,7 @@
         </p>
 
         <p>
-          Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des lieux de basculement.
-          Sculptures, formes et installations cherchent le déplacement du regard, convoquent la matière et ouvrent un autre régime de présence.
+          Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des lieux de basculement. Sculptures, formes et installations cherchent le déplacement du regard, convoquent la matière et ouvrent un autre régime de présence.
         </p>
 
         <span class="panel-link-label">VOIR LES PIÈCES</span>
@@ -288,12 +320,15 @@
     </a>
 
     <figure class="home-image">
-      <img src="home-02.jpg" alt="Composition abstraite bleue et blanche, atmosphérique." />
+      <button class="image-swap" type="button" aria-label="Voir une variation de l’image Écriture">
+        <img class="primary-image" src="home-02.jpg" alt="Composition abstraite écrite et gestuelle." />
+        <img class="secondary-image" src="homex-02.jpg" alt="" aria-hidden="true" />
+      </button>
     </figure>
 
     <a class="panel-link" href="ecriture.html">
       <section id="ecriture" class="panel">
-        <h2>Écriture</h2>
+        <h2>ÉCRITURE</h2>
         <p class="section-subtitle">
           Contes, fragments, textes d’atelier et romans en cours
         </p>
@@ -302,11 +337,38 @@
           L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle rassemble contes, récits, journal d’atelier et recherches en cours, dans une langue de veille, de mémoire et de traversée.
         </p>
 
-        <span class="panel-link-label">Lire</span>
+        <span class="panel-link-label">LIRE</span>
       </section>
     </a>
 
     <div class="section-rule bottom"></div>
   </div>
+
+  <script>
+    document.querySelectorAll(".image-swap").forEach((button) => {
+      let timer = null;
+
+      button.addEventListener("click", () => {
+        if (window.matchMedia("(hover: none)").matches) {
+          button.classList.add("is-alt");
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            button.classList.remove("is-alt");
+          }, 1200);
+        }
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          button.classList.add("is-alt");
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            button.classList.remove("is-alt");
+          }, 1200);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
