@@ -1,1 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Parcours — Alexis Tolmatchev</title>
+  <meta name="description" content="Parcours d’Alexis Tolmatchev : pratique artistique, artisanat métallier, expositions, résidences et expérience professionnelle." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/parcours.html" />
+
+  <meta property="og:title" content="Parcours — Alexis Tolmatchev" />
+  <meta property="og:description" content="Parcours d’Alexis Tolmatchev : pratique artistique, artisanat métallier, expositions, résidences et expérience professionnelle." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/parcours.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parcours — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Parcours d’Alexis Tolmatchev : pratique artistique, artisanat métallier, expositions, résidences et expérience professionnelle." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 30px 120px;
+    }
+
+    nav,
+    h1,
+    h2,
+    .intro,
+    .meta,
+    .meta a,
+    .cv-list,
+    .document-link {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p,
+    blockquote {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px 0;
+    }
+
+    .intro {
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 0 0 22px 0;
+      max-width: 720px;
+    }
+
+    .meta {
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0 0 22px 0;
+    }
+
+    .meta a {
+      color: #111111;
+      text-decoration: none;
+      border-bottom: 1px solid #111111;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .meta a:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    .document-link {
+      display: inline-block;
+      margin: 0 0 34px 0;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .document-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
+    }
+
+    .text-block {
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      margin: 0 0 72px 0;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 18px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    blockquote {
+      margin: 28px 0 0 0;
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.5;
+      padding-left: 18px;
+      border-left: 1px solid #d4dddd;
+    }
+
+    .cv-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .cv-list li {
+      margin: 0 0 12px 0;
+    }
+
+    .cv-list strong {
+      font-weight: 700;
+    }
+
+    a {
+      color: #111111;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .intro {
+        font-size: 15px;
+        line-height: 1.3;
+        margin-bottom: 18px;
+      }
+
+      .meta {
+        font-size: 12px;
+        margin-bottom: 18px;
+      }
+
+      .document-link {
+        font-size: 12px;
+        margin-bottom: 28px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .text-block {
+        margin-bottom: 48px;
+      }
+
+      h2 {
+        font-size: 13px;
+      }
+
+      p,
+      blockquote {
+        font-size: 18px;
+        line-height: 1.45;
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      .cv-list {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="arts-visuels.html">Arts visuels</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+      <h1>Parcours</h1>
+      <p class="intro">
+        Artiste plasticien.
+      </p>
+
+      <div class="meta">
+        Basé en France<br>
+        <a href="mailto:tolmatchev.alexis@gmail.com">tolmatchev.alexis@gmail.com</a><br>
+        Instagram : <a href="https://www.instagram.com/alexistolmatchev/" target="_blank" rel="noopener noreferrer">@alexistolmatchev</a>
+      </div>
+
+      <a class="document-link" href="at-parcours-cv.pdf" target="_blank" rel="noopener noreferrer">
+        Télécharger le CV en PDF
+      </a>
+
+      <div class="header-rule"></div>
+    </header>
+
+    <section class="text-block">
+      <p>
+        Le parcours d’Alexis Tolmatchev repose sur deux expériences complémentaires : une pratique d’artiste plasticien et une activité d’artisan métallier.
+      </p>
+
+      <p>
+        La pratique artistique se déploie à travers le dessin, la sculpture, les installations et l’écriture. Elle constitue un espace de recherche, d’expérimentation et de liberté créative, fondé sur une attention constante à la matière, à la forme et aux processus de transformation.
+      </p>
+
+      <p>
+        En parallèle, le métier de métallier s’est construit dans des contextes exigeants de fabrication, de montage et de réalisation. Il engage rigueur, précision, connaissance des matériaux, lecture des contraintes techniques, sens des réalités de production et capacité à conduire un projet jusqu’à sa mise en œuvre.
+      </p>
+
+      <p>
+        Ces deux dimensions ne s’opposent pas. Elles se renforcent. L’art nourrit l’invention, la vision d’ensemble et la qualité d’attention portée aux formes. Le métier apporte méthode, fiabilité et ancrage dans le réel.
+      </p>
+
+      <p>
+        Ce double parcours permet d’aborder des projets complexes avec une solide expérience de fabrication et une attention constante à la forme, aux matériaux et aux conditions de mise en œuvre. Il articule recherche, maîtrise technique et capacité de réalisation.
+      </p>
+
+      <blockquote>
+        « Les sculptures, les parures et les installations sont conçus comme des dispositifs de passage à activer. Ma pratique associe travail du métal, l’utilisation des fibres et de matériaux hybrides. Elle déplace l’expression des formes lisibles vers la surface, le geste, la contrainte et la durée. Le dessin, les mythes, l’anthropologie et l’écriture nourrissent ce travail. »
+      </blockquote>
+    </section>
+
+    <section class="text-block">
+      <h2>Médiums</h2>
+      <ul class="cv-list">
+        <li>Sculpture (métal, textile, matériaux hybrides) — masques / parures / totems</li>
+        <li>Installation</li>
+        <li>Performance / activation</li>
+        <li>Écriture</li>
+      </ul>
+    </section>
+
+    <section class="text-block">
+      <h2>Projets en cours (depuis 2024)</h2>
+      <ul class="cv-list">
+        <li><strong>DOUZE</strong> — projet au long cours (RUST TO RUST / INFINITE / MATTERS) : masques et parures conçus comme des dispositifs à activer (son / performance / rituel)</li>
+        <li>Installations : recherche et production</li>
+        <li>Dessin : recherche et production</li>
+        <li>Écriture : <em>Les contes de la chasse après la pluie</em> / <em>Devenir fauves</em> / <em>Journal d’atelier</em></li>
+      </ul>
+    </section>
+
+    <section class="text-block">
+      <h2>Transmission / accompagnement</h2>
+      <p>
+        Interventions en contexte d’atelier périscolaire autour de la pratique artistique et des gestes de fabrication.
+      </p>
+      <p>
+        Expérience d’enseignement et d’accompagnement en école d’art.
+      </p>
+      <p>
+        Dans une approche fondée sur la transmission de savoir-faire concrets, l’expérimentation et l’attention.
+      </p>
+    </section>
+
+    <section class="text-block">
+      <h2>Expositions / performances / projets (sélection)</h2>
+      <ul class="cv-list">
+        <li><strong>2026</strong> — Silicone connections / circuitato (installation), Albedo Kitchen, Lille (FR)</li>
+        <li><strong>2026</strong> — Êtres fêtes (exposition collective), B.A.R., Roubaix (FR)</li>
+        <li><strong>2017</strong> — Faire commune (vidéo documentaire), Nuit Blanche / Le Doc, Paris (FR)</li>
+        <li><strong>2015</strong> — Tales of the Hunt (sculptures-totems), 39/93, Romainville (FR)</li>
+        <li><strong>2014–2015</strong> — L’Art est dans les bois (land art in situ), Pleslin-Trigavou (FR)</li>
+        <li><strong>2014</strong> — Urnes ruines (installation / performance), Hangar 56, Paris (FR)</li>
+        <li><strong>2014</strong> — Eden is a bar (installation immersive), Larocafé, Romainville (FR)</li>
+        <li><strong>2013</strong> — Find your own way (installations nomades — organisation), le 116, Ville de Montreuil (FR)</li>
+        <li><strong>2013</strong> — Traces tracées (performance / dessin), Festival Croisements, Shenzhen (CH)</li>
+        <li><strong>2013</strong> — Projet Chaman (performance), Relectures 14, Khiasma, Les Lilas (FR)</li>
+        <li><strong>2012</strong> — Le Banquet (exposition collective et performances — organisation / commissariat), La Marbrerie, Montreuil-sous-Bois (FR)</li>
+        <li><strong>1993</strong> — To much oil (installation), Le Confort Moderne, Poitiers (FR)</li>
+        <li><strong>1992</strong> — Meanwhile… at PULLIT (exposition — organisation), Pullit Centre, Camden, Londres (UK)</li>
+      </ul>
+    </section>
+
+    <section class="text-block">
+      <h2>Résidences / recherches et création (sélection)</h2>
+      <ul class="cv-list">
+        <li><strong>2014–2015</strong> — Atelier Simone Prouvé (tissage — travail du textile), Romainville (FR)</li>
+        <li><strong>2014</strong> — Le SOFT (recherche vidéo), Ivry (FR)</li>
+        <li><strong>2014</strong> — La SNHF (recherche autour du végétal et du paysage), Paris (FR)</li>
+      </ul>
+    </section>
+
+    <section class="text-block">
+      <h2>Expérience professionnelle (sélection)</h2>
+      <ul class="cv-list">
+        <li><strong>2018–2023</strong> — Travailleur associé Coopérative Octopus</li>
+        <li><strong>2018–2023</strong> — Montage d’exposition (Palais de Tokyo - La Fayette anticipation - Le Plateau)</li>
+        <li><strong>2016–2024</strong> — Praticien / fabricant pour des artistes contemporains : Daiga Grantina, Tomás Saraceno, Antoine Renard, Anne Imhof, Marguerite Humeau, Marie-Pierre Messouma</li>
+      </ul>
+    </section>
+  </div>
+</body>
+  </html>
