@@ -46,7 +46,9 @@
     h2,
     .intro,
     .document-link,
-    .external-link {
+    .external-link,
+    .audio-link,
+    .track-title {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -127,7 +129,8 @@
     }
 
     .document-link,
-    .external-link {
+    .external-link,
+    .audio-link {
       display: inline-block;
       margin-top: 14px;
       font-size: 13px;
@@ -141,9 +144,35 @@
     }
 
     .document-link:hover,
-    .external-link:hover {
+    .external-link:hover,
+    .audio-link:hover {
       color: #ff6600;
       border-bottom-color: #ff6600;
+    }
+
+    .audio-block {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      max-width: 720px;
+    }
+
+    .track-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+
+    .audio-player {
+      margin: 0 0 6px 0;
+      max-width: 720px;
+    }
+
+    .audio-player audio {
+      width: 100%;
+      max-width: 720px;
     }
 
     a {
@@ -255,6 +284,20 @@
       <a class="document-link" href="contes-chasse-apres-la-pluie.pdf" target="_blank" rel="noopener noreferrer">
         Ouvrir le recueil en PDF
       </a>
+
+      <div class="audio-block">
+        <div class="track-title">Après la pluie — voix Joseph Kerandraon / son ZEDEN</div>
+        <div class="audio-player">
+          <audio controls preload="none">
+            <source src="apres-la-pluie.mp3" type="audio/mpeg" />
+            Votre navigateur ne prend pas en charge la lecture audio.
+          </audio>
+        </div>
+
+        <a class="audio-link" href="apres-la-pluie.mp3" target="_blank" rel="noopener noreferrer">
+          Écouter ou télécharger
+        </a>
+      </div>
     </section>
 
     <section class="text-block">
@@ -298,11 +341,10 @@
         Le <em>Journal d’atelier</em> rassemble des notes, des images, des fragments de recherche et des textes liés au travail en cours. Il accompagne les pièces au plus près de leur élaboration et tient la forme d’une archive vivante : une manière de suivre les matières, les gestes, les intuitions, les reprises et les déplacements qui traversent l’atelier.
       </p>
 
-      <a class="external-link" href="https://alexistolmatchevalexis-prog.github.io/" target="_blank" rel="noopener noreferrer" style="display:none;"></a>
       <a class="external-link" href="https://alexistolmatchev.substack.com/" target="_blank" rel="noopener noreferrer">
         Lire le Journal d’atelier sur Substack
       </a>
     </section>
   </div>
 </body>
-  </html>
+</html>
