@@ -43,14 +43,13 @@
     h2,
     .intro,
     .meta,
-    .meta a,
+    .document-link,
     .cv-list,
-    .document-link {
+    .quote-sans {
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    p,
-    blockquote {
+    p {
       font-family: "Newsreader", Georgia, serif;
       font-optical-sizing: auto;
       font-weight: 400;
@@ -85,26 +84,14 @@
     .intro {
       font-size: 17px;
       line-height: 1.35;
-      margin: 0 0 22px 0;
+      margin: 0 0 8px 0;
       max-width: 720px;
     }
 
     .meta {
-      font-size: 13px;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.45;
       margin: 0 0 22px 0;
-    }
-
-    .meta a {
-      color: #111111;
-      text-decoration: none;
-      border-bottom: 1px solid #111111;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .meta a:hover {
-      color: #ff6600;
-      border-bottom-color: #ff6600;
     }
 
     .document-link {
@@ -155,11 +142,11 @@
       hyphens: auto;
     }
 
-    blockquote {
+    .quote-sans {
       margin: 28px 0 0 0;
       max-width: 700px;
-      font-size: 19px;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1.55;
       padding-left: 18px;
       border-left: 1px solid #d4dddd;
     }
@@ -179,6 +166,18 @@
 
     .cv-list strong {
       font-weight: 700;
+    }
+
+    .cv-list a {
+      color: #111111;
+      text-decoration: none;
+      border-bottom: 1px solid #111111;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cv-list a:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
     }
 
     a {
@@ -208,11 +207,12 @@
       .intro {
         font-size: 15px;
         line-height: 1.3;
-        margin-bottom: 18px;
+        margin-bottom: 6px;
       }
 
       .meta {
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 1.4;
         margin-bottom: 18px;
       }
 
@@ -233,12 +233,16 @@
         font-size: 13px;
       }
 
-      p,
-      blockquote {
+      p {
         font-size: 18px;
         line-height: 1.45;
         text-align: justify;
         hyphens: auto;
+      }
+
+      .quote-sans {
+        font-size: 17px;
+        line-height: 1.5;
       }
 
       .cv-list {
@@ -261,14 +265,10 @@
 
     <header>
       <h1>Parcours</h1>
-      <p class="intro">
-        Artiste plasticien.
-      </p>
-
+      <p class="intro">Alexis TOLMATCHEV</p>
       <div class="meta">
-        Basé en France<br>
-        <a href="mailto:tolmatchev.alexis@gmail.com">tolmatchev.alexis@gmail.com</a><br>
-        Instagram : <a href="https://www.instagram.com/alexistolmatchev/" target="_blank" rel="noopener noreferrer">@alexistolmatchev</a>
+        Artiste plasticien<br>
+        Basé en France
       </div>
 
       <a class="document-link" href="at-parcours-cv.pdf" target="_blank" rel="noopener noreferrer">
@@ -296,21 +296,18 @@
       </p>
 
       <p>
-        Ce double parcours permet d’aborder des projets complexes avec une solide expérience de fabrication et une attention constante à la forme, aux matériaux et aux conditions de mise en œuvre. Il articule recherche, maîtrise technique et capacité de réalisation.
+        Ce double parcours permet d’aborder des projets parfois complexes avec une solide expérience de fabrication et une attention constante à la forme, aux matériaux et aux conditions de mise en œuvre. Il articule recherche, maîtrise technique et capacité de réalisation.
       </p>
 
-      <blockquote>
-        « Les sculptures, les parures et les installations sont conçus comme des dispositifs de passage à activer. Ma pratique associe travail du métal, l’utilisation des fibres et de matériaux hybrides. Elle déplace l’expression des formes lisibles vers la surface, le geste, la contrainte et la durée. Le dessin, les mythes, l’anthropologie et l’écriture nourrissent ce travail. »
-      </blockquote>
+      <div class="quote-sans">
+        « Les sculptures, les parures et les installations sont conçus comme des dispositifs de passage à activer. Ma pratique associe le travail du métal, l’utilisation de fibres et de matériaux hybrides. Elle déplace l’expression des formes lisibles vers la surface, le geste, la contrainte et la durée. Le dessin, les mythes, l’anthropologie et l’écriture nourrissent ce travail. »
+      </div>
     </section>
 
     <section class="text-block">
       <h2>Médiums</h2>
       <ul class="cv-list">
-        <li>Sculpture (métal, textile, matériaux hybrides) — masques / parures / totems</li>
-        <li>Installation</li>
-        <li>Performance / activation</li>
-        <li>Écriture</li>
+        <li>Sculpture (métal, textile, matériaux hybrides) - masques / parures / totems · Installation · Performance / activation · Écriture.</li>
       </ul>
     </section>
 
@@ -320,7 +317,7 @@
         <li><strong>DOUZE</strong> — projet au long cours (RUST TO RUST / INFINITE / MATTERS) : masques et parures conçus comme des dispositifs à activer (son / performance / rituel)</li>
         <li>Installations : recherche et production</li>
         <li>Dessin : recherche et production</li>
-        <li>Écriture : <em>Les contes de la chasse après la pluie</em> / <em>Devenir fauves</em> / <em>Journal d’atelier</em></li>
+        <li>Écriture : Les contes de la chasse après la pluie / Devenir fauves / Journal d’atelier</li>
       </ul>
     </section>
 
@@ -351,7 +348,7 @@
         <li><strong>2013</strong> — Traces tracées (performance / dessin), Festival Croisements, Shenzhen (CH)</li>
         <li><strong>2013</strong> — Projet Chaman (performance), Relectures 14, Khiasma, Les Lilas (FR)</li>
         <li><strong>2012</strong> — Le Banquet (exposition collective et performances — organisation / commissariat), La Marbrerie, Montreuil-sous-Bois (FR)</li>
-        <li><strong>1993</strong> — To much oil (installation), Le Confort Moderne, Poitiers (FR)</li>
+        <li><strong>1993</strong> - To much oil (installation), Le Confort Moderne, Poitiers (FR)</li>
         <li><strong>1992</strong> — Meanwhile… at PULLIT (exposition — organisation), Pullit Centre, Camden, Londres (UK)</li>
       </ul>
     </section>
@@ -359,18 +356,18 @@
     <section class="text-block">
       <h2>Résidences / recherches et création (sélection)</h2>
       <ul class="cv-list">
-        <li><strong>2014–2015</strong> — Atelier Simone Prouvé (tissage — travail du textile), Romainville (FR)</li>
+        <li><strong>2016</strong> — La SNHF (recherche autour du végétal et du paysage), Paris (FR)</li>
+        <li><strong>2014-2015</strong> — Atelier Simone Prouvé (tissage — travail du textile), Romainville (FR)</li>
         <li><strong>2014</strong> — Le SOFT (recherche vidéo), Ivry (FR)</li>
-        <li><strong>2014</strong> — La SNHF (recherche autour du végétal et du paysage), Paris (FR)</li>
       </ul>
     </section>
 
     <section class="text-block">
       <h2>Expérience professionnelle (sélection)</h2>
       <ul class="cv-list">
-        <li><strong>2018–2023</strong> — Travailleur associé Coopérative Octopus</li>
-        <li><strong>2018–2023</strong> — Montage d’exposition (Palais de Tokyo - La Fayette anticipation - Le Plateau)</li>
-        <li><strong>2016–2024</strong> — Praticien / fabricant pour des artistes contemporains : Daiga Grantina, Tomás Saraceno, Antoine Renard, Anne Imhof, Marguerite Humeau, Marie-Pierre Messouma</li>
+        <li><strong>2018–2023</strong> — Travailleur associé Coopérative Octopus. <a href="https://octopus.coop" target="_blank" rel="noopener noreferrer">https://octopus.coop</a></li>
+        <li><strong>2018–2025</strong> — Montage d’exposition (Palais de Tokyo - La Fayette anticipation - Le Plateau)</li>
+        <li><strong>2016–2024</strong> — Praticien / fabricant pour des artistes contemporains : Daiga Grantina, Tomás Saraceno, Antoine Renard, Anne Imhof, Marguerite Humeau, Marie-Pierre Messouma.</li>
       </ul>
     </section>
   </div>
