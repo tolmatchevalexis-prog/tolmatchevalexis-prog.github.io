@@ -40,12 +40,12 @@
 
     nav,
     h1,
-    h2 {
+    h2,
+    .block-link {
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    p,
-    .section-subtitle {
+    p {
       font-family: "Newsreader", Georgia, serif;
       font-optical-sizing: auto;
       font-weight: 400;
@@ -91,8 +91,17 @@
     }
 
     .card {
+      display: block;
       background: #eef3f3;
       padding: 40px 34px 34px 34px;
+      text-decoration: none;
+      color: #111111;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      background: #e7eeee;
+      transform: translateY(-1px);
     }
 
     h2 {
@@ -103,20 +112,30 @@
       letter-spacing: 0.1em;
     }
 
-    .section-subtitle {
-      font-size: 20px;
-      line-height: 1.35;
-      margin: 0 0 18px 0;
-      max-width: 560px;
-    }
-
     p {
       font-size: 19px;
       line-height: 1.5;
-      margin: 0;
+      margin: 0 0 14px 0;
       max-width: 660px;
       text-align: justify;
       hyphens: auto;
+    }
+
+    .block-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover .block-link {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
     }
 
     a {
@@ -155,12 +174,6 @@
         font-size: 13px;
       }
 
-      .section-subtitle {
-        font-size: 19px;
-        line-height: 1.3;
-        margin-bottom: 16px;
-      }
-
       p {
         font-size: 18px;
         line-height: 1.45;
@@ -187,26 +200,29 @@
     </header>
 
     <div class="cards">
-      <section class="card">
+      <a class="card" href="territoireoublis.html">
         <h2>Territoire des oublis</h2>
         <p>
           Ce projet d’installation invite le visiteur à écrire un souvenir qu’il souhaiterait effacer, puis à le déposer dans une urne intégrant son propre principe de destruction. Ce n’est pas une machine pour oublier, mais un dispositif qui rend visible le désir d’oublier.
         </p>
-      </section>
+        <span class="block-link">Entrer</span>
+      </a>
 
-      <section class="card">
+      <a class="card" href="balais.html">
         <h2>Corps de balais</h2>
         <p>
           Déplace le balai de sa fonction ordinaire vers un régime de présence, où l’outil devient axe, figure et presque corps. L’installation organise une communauté de formes pauvres autour d’un centre rituel, prolongée par la vidéo d’un geste de balayage presque inutile.
         </p>
-      </section>
+        <span class="block-link">Entrer</span>
+      </a>
 
-      <section class="card">
+      <a class="card" href="arawak.html">
         <h2>Arawak6.0</h2>
         <p>
           Explore l’idée d’un corps paré pour être vu par les dieux. Le projet fait apparaître un corps soustrait au regard commun, préparé pour une instance invisible.
         </p>
-      </section>
+        <span class="block-link">Entrer</span>
+      </a>
     </div>
   </div>
 </body>
