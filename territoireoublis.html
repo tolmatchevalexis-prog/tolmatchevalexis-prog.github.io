@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Territoire des oublis — Alexis Tolmatchev</title>
+  <meta name="description" content="Territoire des oublis, projet d’installation d’Alexis Tolmatchev." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/territoireoublis.html" />
+
+  <meta property="og:title" content="Territoire des oublis — Alexis Tolmatchev" />
+  <meta property="og:description" content="Territoire des oublis, projet d’installation d’Alexis Tolmatchev." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/territoireoublis.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/oublis-01.jpg" />
+  <meta property="og:image:alt" content="Image du projet Territoire des oublis." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Territoire des oublis — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Territoire des oublis, projet d’installation d’Alexis Tolmatchev." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/oublis-01.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 30px 120px;
+    }
+
+    nav,
+    h1,
+    .back-link {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px 0;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 0 0 40px 0;
+    }
+
+    .image-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #eef3f3;
+    }
+
+    .text-block {
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      margin: 0 0 40px 0;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .text-block {
+        margin-bottom: 28px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="arts-visuels.html">Arts visuels</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+      <h1>Territoire des oublis</h1>
+      <div class="header-rule"></div>
+    </header>
+
+    <section class="image-grid">
+      <img src="oublis-01.jpg" alt="Territoire des oublis, image 1." />
+      <img src="oublis-02.jpg" alt="Territoire des oublis, image 2." />
+      <img src="oublis-03.jpg" alt="Territoire des oublis, image 3." />
+      <img src="oublis-04.jpg" alt="Territoire des oublis, image 4." />
+    </section>
+
+    <section class="text-block">
+      <p>
+        Ce projet d’installation invite le visiteur à écrire un souvenir qu’il souhaiterait effacer, puis à le déposer dans une urne intégrant son propre principe de destruction. Ce n’est pas une machine pour oublier, mais un dispositif qui rend visible le désir d’oublier.
+      </p>
+
+      <p>
+        <em>Territoire des oublis</em> est une installation conçue comme un dispositif d’écriture, de dépôt et de destruction. Le spectateur y est invité à s’asseoir devant un écritoire et à inscrire sur une bandelette de papier un souvenir qu’il souhaiterait effacer. L’acte d’écriture active des capteurs piezo qui transforment la pression, le frottement et le rythme de la main en émission sonore. Le son n’illustre rien. Il accompagne le geste, en recueille la trace immédiate et en rend sensible la tension.
+      </p>
+
+      <p>
+        Une fois le souvenir formulé, le visiteur se déplace vers un ensemble d’urnes et choisit celle dans laquelle il déposera sa bandelette. Chaque urne intègre un principe de destruction. Le texte confié n’est donc pas conservé comme archive, mais engagé dans un processus de disparition.
+      </p>
+
+      <p>
+        L’installation interroge moins la confession que le désir d’effacement. Écrire, ici, ne consiste pas à raconter, mais à isoler une charge de mémoire, à lui donner une forme minimale, puis à l’abandonner à un dispositif qui en organise la destruction. Entre écritoire, déplacement, dépôt et disparition, <em>Territoire des oublis</em> construit un espace rituel sans liturgie, un protocole silencieux où le souvenir cesse d’être seulement intérieur pour devenir matière provisoire.
+      </p>
+
+      <p>
+        <em>Territoire des oublis</em> n’est pas une machine pour oublier ; c’est une machine qui rend visible le désir d’oublier.
+      </p>
+
+      <p>
+        Le projet explore ainsi la mémoire non comme conservation, mais comme tension entre persistance, sélection, retrait et perte volontaire.
+      </p>
+    </section>
+
+    <section class="image-grid">
+      <img src="oublis-05.jpg" alt="Territoire des oublis, image 5." />
+      <img src="oublis-06.jpg" alt="Territoire des oublis, image 6." />
+      <img src="oublis-07.jpg" alt="Territoire des oublis, image 7." />
+      <img src="oublis-08.jpg" alt="Territoire des oublis, image 8." />
+    </section>
+
+    <section class="image-grid">
+      <img src="oublis-09.jpg" alt="Territoire des oublis, image 9." />
+      <img src="oublis-10.jpg" alt="Territoire des oublis, image 10." />
+      <img src="oublis-11.jpg" alt="Territoire des oublis, image 11." />
+      <img src="oublis-12.jpg" alt="Territoire des oublis, image 12." />
+    </section>
+
+    <a class="back-link" href="projets.html">Retour à Recherches</a>
+  </div>
+</body>
+        </html>
