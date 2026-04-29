@@ -47,8 +47,7 @@
     .section-link,
     .intro,
     .panel-link-label,
-    .image-swap,
-    .translation-widget {
+    .image-swap {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -226,18 +225,6 @@
       border-bottom-color: #ff6600;
     }
 
-    .translation-widget {
-      margin-top: 48px;
-      padding-top: 18px;
-      border-top: 1px solid #d4dddd;
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .translation-widget .gtranslate_wrapper {
-      display: inline-block;
-    }
-
     a {
       color: #111111;
       transition: color 0.2s ease;
@@ -302,12 +289,6 @@
         line-height: 1.45;
         text-align: justify;
         hyphens: auto;
-      }
-
-      .translation-widget {
-        margin-top: 40px;
-        padding-top: 16px;
-        font-size: 12px;
       }
     }
   </style>
@@ -380,10 +361,6 @@
     </a>
 
     <div class="section-rule bottom"></div>
-
-    <div class="translation-widget">
-      <div class="gtranslate_wrapper"></div>
-    </div>
   </div>
 
   <script>
@@ -412,14 +389,5 @@
       });
     });
   </script>
-
-  <script>
-    window.gtranslateSettings = {
-      "default_language": "fr",
-      "languages": ["fr", "en"],
-      "wrapper_selector": ".gtranslate_wrapper"
-    };
-  </script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
 </html>
