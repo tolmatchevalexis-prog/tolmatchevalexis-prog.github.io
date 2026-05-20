@@ -50,7 +50,8 @@
     .back-link,
     .carousel-button,
     .carousel-dot,
-    .track-title {
+    .track-title,
+    .video-caption {
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -262,6 +263,39 @@
       max-width: 720px;
     }
 
+    .video-block {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      max-width: 700px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 660px;
+      aspect-ratio: 16 / 9;
+      background: #eef3f3;
+      overflow: hidden;
+      margin: 0 0 14px 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      margin: 0 0 14px 0;
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+
     .bottom-links {
       display: flex;
       flex-direction: column;
@@ -343,6 +377,11 @@
 
       .carousel-slide img {
         max-height: 68vh;
+      }
+
+      .video-caption {
+        font-size: 12px;
+        line-height: 1.45;
       }
     }
   </style>
@@ -474,6 +513,38 @@
           <a class="audio-link" href="ZEDEN - Summer _ Eternum (Final).mp3" target="_blank" rel="noopener noreferrer">Écouter ou télécharger</a>
         </div>
 
+        <div class="video-block">
+          <h2>Vidéo</h2>
+          <p class="section-subtitle">
+            Performance dansée — Spring
+          </p>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/32B7kjbRHME"
+              title="Performance dansée — Spring"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-caption">
+            O.N.D.O.A dans <em>Spring</em>
+          </div>
+
+          <p>
+            Le masque n’offrait pas au danseur un visage nouveau. Il a fabriqué un temps habitable.
+          </p>
+
+          <p>
+            Sous lui, O.N.D.O.A a accepté de devenir ce qui cherche à sortir. Il est redevenu une graine ancienne, ce réceptacle gardé sous l’eau. Une mémoire remontant avec lenteur, chargée de sève, d’oxydation, de lumière parfois froide.
+          </p>
+
+          <p>
+            Rien ne renaît trop proprement. Ce qui revient porte encore la fatigue de soi. Le vivant ne triomphe jamais : il insiste. Une forme claire sortie d’un lieu sombre.
+          </p>
+        </div>
+
         <div class="bottom-links">
           <a class="audio-link" href="https://soundcloud.com/zedenmusic" target="_blank" rel="noopener noreferrer">
             Rejoindre ZEDEN sur SoundCloud
@@ -524,4 +595,4 @@
     initCarousel('carousel-rust');
   </script>
 </body>
-                </html>
+            </html>
