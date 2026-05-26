@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dessins — Alexis Tolmatchev</title>
-  <meta name="description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Danseurs. Aux arbres. Traces tracées — calligraphies abstraites." />
-  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/dessins.html" />
+  <title>Alexis Tolmatchev — Masques, parures, sculpture et écriture</title>
+  <meta name="description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/index.html" />
 
-  <meta property="og:title" content="Dessins — Alexis Tolmatchev" />
-  <meta property="og:description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Danseurs. Aux arbres. Traces tracées — calligraphies abstraites." />
+  <meta property="og:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
+  <meta property="og:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/dessins.html" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/index.html" />
   <meta property="og:site_name" content="Alexis Tolmatchev" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/dessins-01.jpg" />
-  <meta property="og:image:alt" content="Dessin d’Alexis Tolmatchev." />
+  <meta property="og:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
+  <meta property="og:image:alt" content="Composition graphique abstraite autour d’un visage stylisé." />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dessins — Alexis Tolmatchev" />
-  <meta name="twitter:description" content="Dessins d’Alexis Tolmatchev. Apocalipstick — dessins automatiques. Danseurs. Aux arbres. Traces tracées — calligraphies abstraites." />
-  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/dessins-01.jpg" />
+  <meta name="twitter:title" content="Alexis Tolmatchev — Masques, parures, sculpture et écriture" />
+  <meta name="twitter:description" content="Artiste plasticien. Sculptures, masques, parures, textes et dispositifs de présence." />
+  <meta name="twitter:image" content="https://tolmatchevalexis-prog.github.io/home-01.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,149 +30,246 @@
     body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.58)),
+        url("homefond.jpg") center center / cover no-repeat fixed;
       color: #111111;
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 72px 30px 120px;
-    }
-
-    nav,
+    .home-fixed,
     h1,
+    h2,
     .intro,
-    .back-link {
+    .footer-nav,
+    .footer-year,
+    .panel-link-label,
+    .image-swap {
       font-family: Arial, Helvetica, sans-serif;
     }
 
     p,
     .section-subtitle,
-    .card-title {
+    .tagline {
       font-family: "Newsreader", Georgia, serif;
       font-optical-sizing: auto;
       font-weight: 400;
     }
 
-    nav {
-      margin-bottom: 78px;
-      font-size: 13px;
-      letter-spacing: 0.04em;
+    .home-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      width: 100%;
+      box-sizing: border-box;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 255, 255, 0.56) 55%,
+        rgba(255, 255, 255, 0.18) 100%
+      );
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      padding: 18px 30px 28px 30px;
     }
 
-    nav a {
-      color: #111111;
-      text-decoration: none;
-      margin-right: 18px;
-      transition: color 0.2s ease;
+    .home-fixed-inner {
+      max-width: 860px;
+      margin: 0 auto;
     }
 
-    nav a:hover {
-      color: #ff6600;
-      text-decoration: underline;
-    }
-
-    h1 {
-      font-size: 28px;
+    .home-fixed h1 {
+      font-size: 50px;
       line-height: 1.02;
       font-weight: 500;
       letter-spacing: -0.02em;
       margin: 0 0 18px 0;
-      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .intro {
+    .home-fixed .intro {
       font-size: 17px;
       line-height: 1.35;
-      margin: 0 0 34px 0;
-      max-width: 720px;
+      margin: 0 0 8px 0;
     }
 
-    .header-rule {
-      width: 140px;
+    .home-fixed .tagline {
+      font-size: 19px;
+      line-height: 1.3;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .home-scroll {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 220px 30px 120px;
+    }
+
+    .section-rule {
+      width: 100%;
       height: 1px;
-      background: #d4dddd;
-      margin: 0 0 64px 0;
+      background: rgba(238, 243, 243, 0.9);
+      margin: 0 0 48px 0;
     }
 
-    .text-block {
-      padding-top: 18px;
-      border-top: 1px solid #d4dddd;
-      margin: 0 0 56px 0;
+    .section-rule.bottom {
+      margin: 0 0 22px 0;
+    }
+
+    .home-image {
+      margin: 0;
+    }
+
+    .image-swap {
+      position: relative;
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+      cursor: default;
+      overflow: hidden;
+    }
+
+    .image-swap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-swap .primary-image,
+    .image-swap .secondary-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-swap .secondary-image {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .image-swap:hover .secondary-image,
+    .image-swap:focus-visible .secondary-image,
+    .image-swap.is-alt .secondary-image {
+      opacity: 1;
+    }
+
+    .image-swap:focus-visible {
+      outline: 2px solid #111111;
+      outline-offset: 2px;
+    }
+
+    .panel-link {
+      display: block;
+      text-decoration: none;
+      color: #111111;
+    }
+
+    .panel {
+      background: rgba(238, 243, 243, 0.92);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+      padding: 40px 34px 34px 34px;
+      margin: 0 0 64px 0;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .panel-link:hover .panel {
+      background: rgba(231, 238, 238, 0.95);
+      transform: translateY(-1px);
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .section-subtitle {
       font-size: 20px;
       line-height: 1.35;
-      margin: 0 0 24px 0;
-      max-width: 700px;
+      margin: 0 0 20px 0;
+      max-width: 560px;
     }
 
     p {
       font-size: 19px;
       line-height: 1.5;
       margin: 0 0 14px 0;
-      max-width: 700px;
+      max-width: 660px;
       text-align: justify;
       hyphens: auto;
     }
 
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin-top: 36px;
-    }
-
-    .card {
-      display: block;
-      background: #eef3f3;
-      padding: 34px 30px 30px 30px;
-      text-decoration: none;
-      color: #111111;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .card:hover {
-      background: #e7eeee;
-      transform: translateY(-1px);
-    }
-
-    .card-title {
-      font-size: 20px;
-      line-height: 1.35;
-      margin: 0;
-      max-width: 660px;
-    }
-
-    .controls {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-      margin-top: 36px;
-    }
-
-    .back-link {
+    .panel-link-label {
       display: inline-block;
+      margin-top: 14px;
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
       color: #111111;
-      border: none;
       border-bottom: 1px solid #111111;
-      padding: 0 0 2px 0;
-      background: none;
-      cursor: pointer;
+      padding-bottom: 2px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .back-link:hover {
+    .panel-link:hover .panel-link-label {
       color: #ff6600;
       border-bottom-color: #ff6600;
+    }
+
+    .recent-image-block {
+      margin: 0 0 64px 0;
+    }
+
+    .recent-image-block img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: rgba(238, 243, 243, 0.92);
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-nav a {
+      color: #111111;
+      text-decoration: none;
+      border-bottom: 1px solid #111111;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    .footer-year {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
     a {
@@ -185,38 +282,59 @@
     }
 
     @media (max-width: 700px) {
-      .container {
-        padding: 44px 18px 88px;
+      body {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64)),
+          url("homefond.jpg") center center / cover no-repeat;
       }
 
-      nav {
-        margin-bottom: 56px;
-        font-size: 12px;
+      .home-fixed {
+        padding: 14px 18px 22px 18px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.78) 0%,
+          rgba(255, 255, 255, 0.62) 58%,
+          rgba(255, 255, 255, 0.20) 100%
+        );
       }
 
-      h1 {
-        font-size: 24px;
-        margin-bottom: 14px;
+      .home-fixed h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
       }
 
-      .intro {
+      .home-fixed .intro {
         font-size: 15px;
         line-height: 1.3;
-        margin-bottom: 28px;
+        margin-bottom: 4px;
       }
 
-      .header-rule {
-        margin-bottom: 44px;
+      .home-fixed .tagline {
+        font-size: 17px;
+        line-height: 1.25;
       }
 
-      .section-subtitle,
-      .card-title {
-        font-size: 19px;
-        line-height: 1.3;
+      .home-scroll {
+        padding: 180px 18px 88px;
+      }
+
+      .section-rule {
+        margin: 0 0 34px 0;
+      }
+
+      .panel {
+        padding: 24px 18px 20px 18px;
+        margin: 0 0 40px 0;
+      }
+
+      h2 {
+        font-size: 13px;
       }
 
       .section-subtitle {
-        margin-bottom: 18px;
+        font-size: 19px;
+        line-height: 1.3;
+        margin-bottom: 16px;
       }
 
       p {
@@ -226,91 +344,127 @@
         hyphens: auto;
       }
 
-      .cards {
-        gap: 20px;
-        margin-top: 30px;
+      .recent-image-block {
+        margin-bottom: 40px;
       }
 
-      .card {
-        padding: 24px 18px 20px 18px;
+      .footer-bar {
+        flex-direction: row;
+        align-items: baseline;
+      }
+
+      .footer-nav {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .footer-year {
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="presentation.html">Présentation</a>
-      <a href="parcours.html">Parcours</a>
-      <a href="arts-visuels.html">Arts visuels</a>
-      <a href="ecriture.html">Écriture</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <header>
-      <h1>Dessins</h1>
+  <div class="home-fixed">
+    <div class="home-fixed-inner">
+      <h1>Alexis TOLMATCHEV</h1>
       <p class="intro">
-        Fragments, ouvertures et formes en veille.
+        Artiste plasticien.
       </p>
-      <div class="header-rule"></div>
-    </header>
-
-    <section class="text-block">
-      <p class="section-subtitle">
-        Carnets, surgissements, mémoire du noir
+      <p class="tagline">
+        <em>formes, matières, passages.</em>
       </p>
-
-      <p>
-        Le dessin n’est pas un préambule. Il n’est pas l’ombre de l’œuvre. Il est déjà le lieu de la forme.
-      </p>
-
-      <p>
-        Dessiner ne consiste pas à représenter, mais à faire advenir. Le trait ne décrit pas un monde connu : il cherche ce qui n’a pas encore trouvé sa figure, son poids, sa matière. Il avance dans l’incertitude. Il ouvre. Il tente de convoquer. Il met en mouvement l’imagination active.
-      </p>
-
-      <p>
-        Le dessin est l’événement organique. Un indicible y surgit, hésite, bifurque, se condense ou se défait. Rien n’y est stable d’emblée. Rien n’y vaut comme démonstration. C’est une zone d’apparition, un champ de forces, un lieu de pression exercée sur l’informe.
-      </p>
-
-      <p>
-        Sa pauvreté matérielle est sa puissance. Papier, crayon, encre : presque rien. Mais c’est ce rien qui porte déjà un potentiel de densité. Le dessin est une matière pauvre chargée de tous les espoirs d’une richesse à faire venir. Dans une rature, dans une masse noire, dans une ligne hésitante, peut déjà dormir la charge d’un masque, la gravité d’une parure, la structure d’une sculpture, la présence d’une installation.
-      </p>
-
-      <p>
-        Le carnet de croquis est le premier étage de cette élaboration. Il est l’atelier portatif du trouble. Le lieu où la pensée dépose ses scories, ses pressentiments, ses ratés fertiles, ses obsessions muettes. C’est le noir de l’alchimie : non pas l’échec, mais la phase obscure où la matière commence à travailler. Là, rien n’est résolu. Tout insiste.
-      </p>
-
-      <p>
-        Avec le temps, la somme des carnets forme davantage qu’un ensemble de traces. Elle devient la mémoire active d’un cheminement. On y voit revenir des figures, persister des tensions, muter des intuitions. Des formes y demeurent en veille pendant des années avant de trouver leur juste nécessité. Le dessin garde ainsi la mémoire de l’élaboration, non comme archive morte, mais comme réserve vive.
-      </p>
-
-      <p>
-        Dessiner, c’est accueillir le je-ne-sais-quoi en donnant la main au « je est un autre ». C’est donner à l’informe une chance de paraître. C’est accepter ce qui monte d’une zone encore sans langage, et lui donner une première hospitalité. Le dessin est l’un des lieux originaires où la forme naît de presque rien.
-      </p>
-
-      <div class="cards">
-        <a class="card" href="apocalipstick.html">
-          <p class="card-title">Apocalipstick — dessins automatiques</p>
-        </a>
-
-        <a class="card" href="danseurs.html">
-          <p class="card-title">Danseurs</p>
-        </a>
-
-        <a class="card" href="aux-arbres.html">
-          <p class="card-title">Aux arbres</p>
-        </a>
-
-        <a class="card" href="traces-tracees.html">
-          <p class="card-title">Traces tracées — calligraphies abstraites</p>
-        </a>
-      </div>
-
-      <div class="controls">
-        <a class="back-link" href="index.html">Retour à l’accueil</a>
-      </div>
-    </section>
+    </div>
   </div>
+
+  <main class="home-scroll">
+    <div class="section-rule"></div>
+
+    <figure class="home-image">
+      <button class="image-swap" type="button" aria-label="Voir une variation de l’image Arts visuels">
+        <img class="primary-image" src="home-01.jpg" alt="Composition graphique abstraite autour d’un visage stylisé." />
+        <img class="secondary-image" src="homex-01.jpg" alt="" aria-hidden="true" />
+      </button>
+    </figure>
+
+    <a class="panel-link" href="arts-visuels.html">
+      <section id="arts-visuels" class="panel">
+        <h2>ARTS VISUELS</h2>
+        <p class="section-subtitle">
+          Sculptures, masques, parures et dispositifs de présence
+        </p>
+
+        <p>
+          Le travail d’Alexis Tolmatchev se déploie à travers des formes conçues comme des lieux de basculement. Sculptures, formes et installations cherchent le déplacement du regard, convoquent la matière et ouvrent un autre régime de présence.
+        </p>
+
+        <span class="panel-link-label">VOIR LES PIÈCES</span>
+      </section>
+    </a>
+
+    <figure class="home-image">
+      <button class="image-swap" type="button" aria-label="Voir une variation de l’image Écriture">
+        <img class="primary-image" src="home-02.jpg" alt="Composition abstraite écrite et gestuelle." />
+        <img class="secondary-image" src="homex-02.jpg" alt="" aria-hidden="true" />
+      </button>
+    </figure>
+
+    <a class="panel-link" href="ecriture.html">
+      <section id="ecriture" class="panel">
+        <h2>ÉCRITURE</h2>
+        <p class="section-subtitle">
+          Contes, fragments, textes d’atelier et romans en cours
+        </p>
+
+        <p>
+          L’écriture accompagne le travail plastique comme un autre lieu de la forme. Elle rassemble contes, récits, journal d’atelier et recherches en cours, dans une langue de veille, de mémoire et de traversée.
+        </p>
+
+        <span class="panel-link-label">LIRE</span>
+      </section>
+    </a>
+
+    <section class="recent-image-block">
+      <img src="home-recent.jpg" alt="Travail récent d’Alexis Tolmatchev." />
+    </section>
+
+    <div class="section-rule bottom"></div>
+
+    <footer class="footer-bar">
+      <div class="footer-nav">
+        <a href="presentation.html">Présentation</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-year">2026.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll(".image-swap").forEach((button) => {
+      let timer = null;
+
+      button.addEventListener("click", () => {
+        if (window.matchMedia("(hover: none)").matches) {
+          button.classList.add("is-alt");
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            button.classList.remove("is-alt");
+          }, 1200);
+        }
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          button.classList.add("is-alt");
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            button.classList.remove("is-alt");
+          }, 1200);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
