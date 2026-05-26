@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Danseurs — Alexis Tolmatchev</title>
+  <meta name="description" content="Danseurs — page en construction." />
+  <link rel="canonical" href="https://tolmatchevalexis-prog.github.io/danseurs.html" />
+
+  <meta property="og:title" content="Danseurs — Alexis Tolmatchev" />
+  <meta property="og:description" content="Danseurs — page en construction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tolmatchevalexis-prog.github.io/danseurs.html" />
+  <meta property="og:site_name" content="Alexis Tolmatchev" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Danseurs — Alexis Tolmatchev" />
+  <meta name="twitter:description" content="Danseurs — page en construction." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 30px 120px;
+    }
+
+    nav,
+    h1,
+    .intro,
+    .back-link {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p,
+    .section-subtitle {
+      font-family: "Newsreader", Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-bottom: 78px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: #111111;
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px 0;
+    }
+
+    .intro {
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 0 0 34px 0;
+      max-width: 720px;
+    }
+
+    .header-rule {
+      width: 140px;
+      height: 1px;
+      background: #d4dddd;
+      margin: 0 0 64px 0;
+    }
+
+    .text-block {
+      padding-top: 18px;
+      border-top: 1px solid #d4dddd;
+      margin: 0 0 56px 0;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      line-height: 1.35;
+      margin: 0 0 18px 0;
+      max-width: 700px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.5;
+      margin: 0 0 14px 0;
+      max-width: 700px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+      border-bottom: 1px solid #111111;
+      padding: 0 0 2px 0;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: #ff6600;
+      border-bottom-color: #ff6600;
+    }
+
+    #traceur-page {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #111111;
+      pointer-events: none;
+      z-index: 200;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 44px 18px 88px;
+      }
+
+      nav {
+        margin-bottom: 56px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 14px;
+      }
+
+      .intro {
+        font-size: 15px;
+        line-height: 1.3;
+        margin-bottom: 28px;
+      }
+
+      .header-rule {
+        margin-bottom: 44px;
+      }
+
+      .section-subtitle {
+        font-size: 19px;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.45;
+        text-align: justify;
+        hyphens: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="traceur-page" aria-hidden="true"></div>
+
+  <div class="container">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="parcours.html">Parcours</a>
+      <a href="arts-visuels.html">Arts visuels</a>
+      <a href="ecriture.html">Écriture</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <header>
+      <h1>Danseurs</h1>
+      <p class="intro">
+        Dessins.
+      </p>
+      <div class="header-rule"></div>
+    </header>
+
+    <section class="text-block">
+      <p class="section-subtitle">
+        Page en construction
+      </p>
+
+      <div class="controls">
+        <a class="back-link" href="dessins.html">Retour à Dessins</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const traceur = document.getElementById("traceur-page");
+
+    function placerTraceur(pageX, pageY) {
+      traceur.style.left = pageX + "px";
+      traceur.style.top = pageY + "px";
+      traceur.style.display = "block";
+    }
+
+    let mouseStopTimer = null;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+
+    document.addEventListener("mousemove", function (event) {
+      lastMouseX = event.pageX;
+      lastMouseY = event.pageY;
+
+      clearTimeout(mouseStopTimer);
+      mouseStopTimer = setTimeout(function () {
+        placerTraceur(lastMouseX, lastMouseY);
+      }, 120);
+    });
+
+    document.addEventListener("touchend", function (event) {
+      const touch = event.changedTouches[0];
+      if (touch) {
+        placerTraceur(touch.pageX, touch.pageY);
+      }
+    }, { passive: true });
+  </script>
+</body>
+  </html>
